@@ -1,0 +1,100 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* PROJECT STRUCTURE *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .branch
+$branch__border-left: 1px dashed darken($divider-color, 15%) !default;
+// .branch ::after ::before
+$branch-before-after__background: lighten($primary-color-dark, 5%) !default;
+// .branch .leaf-top ::before
+$branch__leaf-top-before__border-top: $branch__border-left !default;
+// .branch .leaf-top ::after
+$branch__leaf-top-after__background: $branch-before-after__background !default;
+// .branch .leaf-bottom ::before
+$branch__leaf-bottom-before__border-left: $branch__border-left !default;
+
+
+.project-structure {
+    padding: 0;
+    &,
+    ul {
+        list-style: none;
+    }
+    ul {
+        padding-left: 25px;
+    }
+    li {
+        @extend %paragraphs;
+        margin: 8px 0;
+    }
+    .branch {
+        position: relative;
+        border-left: $branch__border-left;
+        padding-left: 25px;
+        margin-left: 12px;
+        @include before-after {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: $branch-before-after__background;
+            position: absolute;
+            display: block;
+            left: -4px;
+            border-radius: 50%;
+        }
+        @include before {
+            top: -9px;
+        }
+        @include after {
+            bottom: -7px;
+        }
+        &__icon {
+            float: left;
+            transform: scale(0.8);
+            margin: -3px 3px 0 0;
+        }
+        &__leaf {
+            &,
+            &-top,
+            &-bottom {
+                position: relative;
+            }
+            &-top {
+                @include before-after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                }
+                @include before {
+                    width: 26px;
+                    height: 0;
+                    top: -6px;
+                    left: -20px;
+                    border-top: $branch__leaf-top-before__border-top;
+                }
+                @include after {
+                    width: 7px;
+                    height: 7px;
+                    background: $branch__leaf-top-after__background;
+                    left: 8px;
+                    top: -9px;
+                    border-radius: 50%;
+                }
+            }
+            &,
+            &-bottom {
+                @include before {
+                    content: "";
+                    width: 0;
+                    height: 8px;
+                    position: absolute;
+                    display: block;
+                    top: -9px;
+                    left: 12px;
+                    border-left: $branch__leaf-bottom-before__border-left;
+                }
+            }
+        }
+    }
+}

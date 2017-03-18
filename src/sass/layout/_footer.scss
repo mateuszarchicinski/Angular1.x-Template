@@ -1,0 +1,17 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* MAIN FOOTER *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// __copyright
+$main-footer__copyright__font-size: 0.8em !default;
+$main-footer__copyright__font-weight: 400 !default;
+
+
+.main-footer {
+    padding: 25px 0 35px;
+    &__copyright {
+        font-size: $main-footer__copyright__font-size;
+        font-weight: $main-footer__copyright__font-weight;
+    }
+}

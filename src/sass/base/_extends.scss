@@ -1,0 +1,45 @@
+//~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* EXTENDS *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// %Pr-Pn__page
+$Pr-Pn__page__background: $color__white !default;
+$Pr-Pn__page__border: 1px solid rgba($color__black, 0.1) !default;
+$Pr-Pn__page__box-shadow: 0 3px 6px rgba($color__black, 0.15), 0 3px 6px rgba($color__black, 0.24) !default;
+
+
+// Pages: readme & notfound
+%Pr-Pn__page {
+    background: $Pr-Pn__page__background;
+    border-radius: 2px;
+    border: $Pr-Pn__page__border;
+    box-shadow: $Pr-Pn__page__box-shadow;
+    margin: 0 auto;
+}
+
+
+// %paragraphs
+$paragraphs__line-height: 1.3 !default;
+$paragraphs__text-align: justify !default;
+
+
+// Components: articles & project structure & table striped
+%paragraphs {
+    line-height: $paragraphs__line-height;
+    // text-align: $paragraphs__text-align;
+}
+
+
+// %Pr-Ca__anchor
+$Pr-Ca__anchor__transition: opacity 0.1s ease !default;
+$Pr-Ca__anchor__margin-left: #{(3 / 16)}em !default;
+
+
+// Pages: readme | Components: articles
+%Pr-Ca__anchor {
+    vertical-align: sub;
+    @include opacity(0);
+    transition: $Pr-Ca__anchor__transition;
+    margin-left: $Pr-Ca__anchor__margin-left;
+}

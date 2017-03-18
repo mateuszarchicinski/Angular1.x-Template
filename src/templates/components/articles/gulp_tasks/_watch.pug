@@ -1,0 +1,42 @@
+//-
+    Watch
+
+ol.article__list
+    li
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.watch[0][0]}
+            br
+            strong #{data.articles.gulpTasks.table.rows.watch[0][1]}
+            span.arrow-right
+            code.param__name #{data.articles.gulpTasks.table.rows.watch[0][2]}
+            br
+            strong .sass
+            |  #{data.articles.gulpTasks.table.rows.watch[0][3]} 
+            strong .scss
+            span.arrow-right
+            code.param__name nr: 
+                a(href="#sassLint" rel="help") 2
+                |  #{data.articles.gulpTasks.table.rows.watch[0][4]} 
+                a(href="#sassCss" rel="help") 1
+            br
+            strong .js
+            span.arrow-right
+            code.param__name nr: 
+                a(href="#jsHint" rel="help") 3
+                |  #{data.articles.gulpTasks.table.rows.watch[0][4]} 
+                a(href="#server" rel="help") 11
+            br
+            strong project.data.json
+            |  #{data.articles.gulpTasks.table.rows.watch[0][4]} 
+            strong .pug
+            span.arrow-right
+            code.param__name nr: 
+                a(href="#pugLint" rel="help") 7
+                |  #{data.articles.gulpTasks.table.rows.watch[0][4]} 
+                a(href="#pug" rel="help")  6
+            br
+            strong .html
+            span.arrow-right
+            code.param__name nr: 
+                a(href="#htmlHint" rel="help") 9
+                |  #{data.articles.gulpTasks.table.rows.watch[0][4]} 
+                a(href="#server" rel="help") 11

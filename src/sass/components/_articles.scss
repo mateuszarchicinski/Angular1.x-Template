@@ -1,0 +1,75 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* ARTICLES *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .article__list li
+$article__list__li__margin: 0.85em 0 !default;
+// .article__list-15
+$article__list-15__li__margin: 1em 0 1.5em !default;
+// .article__list-15 :last-child
+$article__list-15-l-c__li__margin: 1em 0 1em !default;
+// .article__list-points
+$article__list-points__li__margin: 0.8em 0 !default;
+
+
+.article {
+    padding-top: 1px;
+    &__title {
+        &:hover {
+            .article__anchor {
+                @include opacity(0.9);
+            }
+        }
+    }
+    &__anchor {
+        @extend %Pr-Ca__anchor;
+    }
+    &__paragraph {
+        @extend %paragraphs;
+    }
+    &__list {
+        padding-left: 17px;
+        li {
+            @extend %paragraphs;
+            margin: $article__list__li__margin;
+        }
+        .code__block {
+            margin-left: -17px;
+        }
+        &-decimal {
+            list-style: decimal;
+        }
+        &-disc {
+            list-style: disc;
+        }
+        &-circle {
+            list-style: circle;
+        }
+        &-15 {
+            li {
+                margin: $article__list-15__li__margin;
+                &:last-child {
+                    margin: $article__list-15-l-c__li__margin;
+                }
+            }
+        }
+        &-points {
+            padding-left: 20px;
+            li {
+                margin: $article__list-points__li__margin;
+            }
+        }
+        &.no-list-padding {
+            list-style: none;
+            counter-reset: elementsCounter-1;
+            padding: 0;
+            li {
+                counter-increment: elementsCounter-1;
+                @include before {
+                    content: counter(elementsCounter-1) ". ";
+                }
+            }
+        }
+    }
+}

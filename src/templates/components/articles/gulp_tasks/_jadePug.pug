@@ -1,0 +1,27 @@
+//-
+    JadePug
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.jadePug[0][0]} 
+        strong .jade
+        | .
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.jadePug[1][0]} 
+        strong .jade
+        |  #{data.articles.gulpTasks.table.rows.jadePug[1][1]} 
+        strong .pug
+        |  (
+        a(href="https://github.com/hparra/gulp-rename#usage" target="_blank" rel="help") gulp-rename
+        | ).
+    li #{data.articles.gulpTasks.table.rows.jadePug[2][0]} 
+        strong .pug
+        |  
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.jadePug[2][1]} 
+        strong .jade
+        | .
+    li #{data.articles.gulpTasks.table.rows.jadePug[3][0]} 
+        strong .jade
+        |  (
+        a(href="https://github.com/sindresorhus/del#usage" target="_blank" rel="help") del
+        | ).

@@ -1,0 +1,92 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* SYNAX HIGHLIGHTING *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// __line __block
+$code__line-block__background: $color__amour !default;
+$code__line-block__font-size: 90% !default;
+$code__line-block__text-align: justify !default;
+$code__line-block__color: $color__black !default;
+
+
+.code {
+    &__line,
+    &__block {
+        background: $code__line-block__background;
+        font-size: $code__line-block__font-size;
+        text-align: $code__line-block__text-align;
+        color: $code__line-block__color;
+        white-space: normal;
+        border-radius: 3px;
+    }
+    &__line {
+        padding: 1px 1px;
+    }
+    &__block {
+        display: block;
+        padding: 16px;
+        margin: 10px 0;
+        .part {
+            &-visible {
+                display: inline;
+                &.invert {
+                    @media screen and (max-width: $break-point__2) {
+                        display: none;
+                    }
+                }
+            }
+            &-hidden {
+                display: none;
+                &.invert {
+                    @media screen and (max-width: $break-point__2) {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// __keyword & __name & __opt-arg
+$param__keyword-name-opt-arg__color: $color__black !default;
+// __name & __opt-arg - before & after
+$param__name-opt-arg__font-size: 1.75em !default;
+// __name - before & after
+$param__name__color: $primary-color-dark !default;
+// __opt-arg - before & after
+$param__opt-arg__color: $accent-color !default;
+
+
+.param {
+    &__keyword,
+    &__name,
+    &__opt-arg {
+        color: $param__keyword-name-opt-arg__color;
+        white-space: nowrap;
+    }
+    &__name,
+    &__opt-arg {
+        @include before-after {
+            content: "[";
+            font-size: $param__name-opt-arg__font-size;
+        }
+        @include after {
+            content: "]";
+        }
+        &-inline-24 {
+            line-height: 24px;
+        }
+    }
+    &__name {
+        @include before-after {
+            color: $param__name__color;
+        }
+    }
+    &__opt-arg {
+        @include before-after {
+            color: $param__opt-arg__color;
+        }
+    }
+}

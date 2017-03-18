@@ -1,0 +1,104 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* TYPOGRAPHY *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+/* Headings */
+// .primary-heading
+$primary-heading__font-size: 2em !default;
+$primary-heading__font-weight: 300 !default;
+$primary-heading__text-transform: uppercase !default;
+// ::after
+$primary-heading__after__width: 150px !default;
+$primary-heading__after__height: 3px !default;
+$primary-heading__after__background: $primary-color !default;
+$primary-heading__after__font-size: 0.5em !default;
+$primary-heading__after__border-radius: 20% !default;
+$primary-heading__after__margin: 5px auto 0 !default;
+// .secondary-heading .tertiary-heading .quaternary-heading
+$secondary-heading__font-size: 1.5em !default;
+$tertiary-heading__font-size: 1.25em !default;
+$headings__font-weight: 400 !default;
+$headings__padding-bottom: 4px !default;
+$headings__border-bottom: 1px solid $primary-color !default;
+$quaternary-heading__font-size: 1.15em !default;
+
+
+.primary-heading {
+    font-size: $primary-heading__font-size;
+    font-weight: $primary-heading__font-weight;
+    text-transform: $primary-heading__text-transform;
+    @include after {
+        content: "";
+        width: $primary-heading__after__width;
+        height: $primary-heading__after__height;
+        background: $primary-heading__after__background;
+        display: block;
+        font-size: $primary-heading__after__font-size;
+        border-radius: $primary-heading__after__border-radius;
+        margin: $primary-heading__after__margin;
+    }
+}
+
+.secondary-heading {
+    font-size: $secondary-heading__font-size;
+}
+
+.tertiary-heading {
+    font-size: $tertiary-heading__font-size;
+}
+
+.secondary-heading,
+.tertiary-heading,
+.quaternary-heading {
+    font-weight: $headings__font-weight;
+    padding-bottom: $headings__padding-bottom;
+    border-bottom: $headings__border-bottom;
+}
+
+.quaternary-heading {
+    font-size: $quaternary-heading__font-size;
+    border-bottom: 0;
+    margin: 0;
+}
+
+
+/* Text */
+//__small
+$text-small__font-size: 0.85em !default;
+//__normal
+$text-normal__font-size: 1em !default;
+//__medium
+$text-medium__font-size: 1.15em !default;
+//__large
+$text-large__font-size: 1.3em !default;
+// strong
+$strong__font-weight: 500 !default;
+
+
+.text {
+    &-small {
+        font-size: $text-small__font-size;
+    }
+    &-normal {
+        font-size: $text-normal__font-size;
+    }
+    &-medium {
+        font-size: $text-medium__font-size;
+    }
+    &-large {
+        font-size: $text-large__font-size;
+    }
+// sass-lint:disable no-important
+    &-center {
+        text-align: center !important;
+    }
+// sass-lint:enable no-important
+    &-hidden {
+        @include no-text;
+    }
+}
+
+strong {
+    font-weight: $strong__font-weight;
+}

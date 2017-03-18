@@ -1,0 +1,36 @@
+//~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* README *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// __info
+$readme__info__padding: 0 0 0.125em 1em !default;
+$readme__info__border-left: 0.25em solid $primary-color-dark !default;
+$readme__info__color: $secondary-text-color !default;
+
+
+.readme {
+    @extend %Pr-Pn__page;
+    width: 750px;
+    padding: 35px 45px 45px;
+    @media screen and (max-width: $break-point__1) {
+        width: 100%;
+        padding: 30px 20px 40px;
+    }
+    &__title {
+        &:hover {
+            .readme__anchor {
+                @include opacity(0.9);
+            }
+        }
+    }
+    &__anchor {
+        @extend %Pr-Ca__anchor;
+    }
+    &__info {
+        @extend %paragraphs;
+        color: $readme__info__color;
+        padding: $readme__info__padding;
+        border-left: $readme__info__border-left;
+    }
+}

@@ -1,0 +1,53 @@
+//-
+    Head
+
+//Define Unicode
+meta(charset="utf-8")
+
+if baseUrl
+    //Define Base URL Address
+    base(href=baseUrl)
+
+//Define a Compatibility with IE
+meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+//Define Flexible Viewport for Mobile Devices
+meta(name="viewport" content="width=device-width, initial-scale=1")
+
+//Phone Numbers Detection
+meta(name="format-detection" content="telephone=no")
+
+//Search Engine Optimization Sources
+title= data.title
+meta(name="description" content=data.description)
+meta(name="keywords" content=data.keywords)
+meta(name="author" content=data.author)
+if facebookApps.appId
+    meta(property="fb:app_id" content=facebookApps.appId)
+meta(property="og:url" content=host)
+meta(property="og:type" content="website")
+meta(property="og:title" content=data.ogTitle)
+meta(property="og:description" content=data.ogDescription)
+meta(property="og:image" content=host + "tile-1200x630px.png")
+meta(name="robots" content="index, follow, noodp, noydir")
+
+//Icon Sources
+link(rel="apple-touch-icon" href="apple-touch-icon.png")
+
+//Fonts Sources
+link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic")
+
+//Google Chrome - Theme Color
+meta(name="theme-color" content="#F44336")
+
+//Cascading Style Sheets Sources
+//build:css css/main.min.css
+
+//Bower Components
+//bower:css
+//endbower
+
+//Application Style Sheets Sources
+link(rel="stylesheet" href="css/main.css")
+
+//endbuild

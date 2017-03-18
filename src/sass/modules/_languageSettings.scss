@@ -1,0 +1,52 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* LANGUAGE SETTINGS *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// __link
+$l-s-link__font-size: 0.8em !default;
+$l-s-link__text-transform: uppercase !default;
+$l-s-link__padding: 0.5em 1em !default;
+$l-s-link__border: 1px solid $divider-color !default;
+$l-s-link__transition: all 0.25s ease !default;
+$l-s-link__color: $secondary-text-color !default;
+// __link-active
+$l-s-link-active__background-color: lighten($primary-color, 4%) !default;
+$l-s-link-active__box-shadow: 0 1px 1px rgba($color__black, .15), inset 0 0 8px rgba(30, 40, 50, .5) !default;
+$l-s-link-active__color: $color__white !default;
+
+
+.language-settings {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin : 15px 0 0;
+    }
+    &__link {
+        @extend %paragraphs;
+        display: block;
+        font-size: $l-s-link__font-size;
+        text-transform: $l-s-link__text-transform;
+        padding: $l-s-link__padding;
+        border: $l-s-link__border;
+        transition: $l-s-link__transition;
+        &,
+        &:link,
+        &:visited {
+            color: $l-s-link__color;
+        }
+        &-active {
+            background-color: $l-s-link-active__background-color;
+            border: 0;
+            box-shadow: $l-s-link-active__box-shadow;
+            &,
+            &:link,
+            &:visited {
+                color: $l-s-link-active__color;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+//-
+    Upload
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.upload[0][0]} 
+        strong project.config.js
+        |  #{data.articles.gulpTasks.table.rows.upload[0][1]}
+    li #{data.articles.gulpTasks.table.rows.upload[1][0]}
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.upload[2][0]} 
+        strong DESTINATION
+        |  (
+        a(href="https://github.com/morris/vinyl-ftp#api" target="_blank" rel="help") vinyl-ftp
+        | ).

@@ -1,0 +1,18 @@
+//-
+    NPM Modules
+
+article(id="NPMModules" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.npmModules.headline}
+            a(href="#NPMModules" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.npmModules.paragraph[0][0]}
+            strong package.json
+            | ):
+        ul.article__list.article__list-points
+            each module in data.articles.npmModules.list
+                li
+                    a(href=module.link target="_blank" rel="help") #{module.name}
+        p.article__paragraph #{data.articles.npmModules.paragraph[1][0]} 
+            code.code__line npm install
+            | .

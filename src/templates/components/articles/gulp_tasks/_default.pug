@@ -1,0 +1,29 @@
+//-
+    Default
+
+ol.article__list
+    li 
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.build[0][0]}
+            a(href="https://github.com/OverZealous/run-sequence#run-sequence" target="_blank" rel="help") run-sequence
+            | ):
+            code.param__name.param__name-inline-24
+                | nr: 
+                a(href="#sassLint" rel="help") 2
+                | , 
+                a(href="#sassCss" rel="help") 1
+                | , 
+                a(href="#jsHint" rel="help") 3
+                | , 
+                a(href="#pugLint" rel="help") 7
+                | , 
+                a(href="#pug" rel="help") 6
+                | , 
+                a(href="#htmlHint" rel="help") 9
+                | , 
+                a(href="#server" rel="help") 11
+
+                | , 
+                a(href="#watch" rel="help") 12
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.default[0][0]} 
+            br.br__1
+            | #{data.articles.gulpTasks.table.rows.default[0][1]}

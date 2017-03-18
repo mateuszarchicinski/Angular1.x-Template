@@ -1,0 +1,302 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* VARIABLES *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// ---------------------
+//     HELPERS
+// ---------------------
+
+
+// *--------- FUNCTIONS ---------*
+
+
+// *--------- COLORS ---------*
+
+
+// *--------- VARIABLES ---------*
+// Lines Heights
+$line-height__1-2:     1.2;
+$line-height__1-3:     1.3;
+
+// Fonts
+$font__roboto:         Roboto;
+$font__helvetica-neue: "Helvetica Neue";
+$font__sans-serif:     sans-serif;
+
+// Fonts Sizes
+$font-size__1:         1em;
+
+// Fonts Weights
+$font-weight__bolder:  600;
+$font-weight__bold:    500;
+$font-weight__normal:  400;
+$font-weight__lighter: 300;
+
+// Colors
+$primary-color-dark:   $color__persian-red;
+$primary-color:        $color__red-orange;
+$primary-color-light:  $color__we-peep;
+$accent-color:         $color__neon-blue;
+$primary-text-color:   $color__nero;
+$secondary-text-color: $color__grey;
+$divider-color:        $color__silver;
+
+// Breaks Points
+$break-point__1:       768px;
+$break-point__2:       608px;
+$break-point__3:       368px;
+
+
+// *--------- MIXINS ---------*
+
+
+// *--------- TYPOGRAPHY ---------*
+$base__line-height: $line-height__1-2;
+$base__font-family: $font__roboto, $font__helvetica-neue, $font__sans-serif;
+$base__font-size: $font-size__1;
+$base__font-weight: $font-weight__normal;
+/* Headings */
+// .primary-heading
+$primary-heading__font-size: $base__font-size * 2;
+$primary-heading__font-weight: $font-weight__lighter;
+$primary-heading__text-transform: uppercase;
+// ::after
+$primary-heading__after__width: #{(150 / 16)}em;
+$primary-heading__after__height: #{(3 / 16)}em;
+$primary-heading__after__background: $primary-color;
+$primary-heading__after__font-size: $primary-heading__font-size / 4;
+$primary-heading__after__border-radius: 20%;
+$primary-heading__after__margin: #{(5 / 16)}em auto 0;
+// .secondary-heading .tertiary-heading .quaternary-heading
+$secondary-heading__font-size: $primary-heading__font-size - 0.5;
+$tertiary-heading__font-size: $secondary-heading__font-size - 0.25;
+$headings__font-weight: $base__font-weight;
+$headings__padding-bottom: #{(4 / 16)}em;
+$headings__border-bottom: 1px solid $primary-color;
+$quaternary-heading__font-size: $tertiary-heading__font-size - 0.1;
+/* Text */
+//__normal
+$text-normal__font-size: $base__font-size;
+//__small
+$text-small__font-size: $text-normal__font-size - 0.15;
+//__medium
+$text-medium__font-size: $text-normal__font-size + 0.15;
+//__large
+$text-large__font-size: $text-medium__font-size + 0.15;
+// strong
+$strong__font-weight: $font-weight__bold;
+
+
+// ---------------------
+//     FRAMEWORKS
+// ---------------------
+
+
+// *--------- ANGULAR MATERIAL ---------*
+$font-family: $base__font-family;
+
+
+// ---------------------
+//     COMPONENTS
+// ---------------------
+
+
+// *--------- HTML SYMBOLS / ENTITIES ---------*
+// .arrow-right
+$ar-before__font-size: 1.05em;
+
+
+// *--------- ARTICLES ---------*
+// .article__list li
+$article__list__li__margin: 0.85em 0;
+// .article__list-15
+$article__list-15__li__margin: 1em 0 1.5em;
+// .article__list-15 :last-child
+$article__list-15-l-c__li__margin: 1em 0 1em;
+// .article__list-points
+$article__list-points__li__margin: 0.8em 0;
+
+
+// *--------- SYNTAX HIGHLIGHTING ---------*
+// __line __block
+$code__line-block__background: $color__amour;
+$code__line-block__font-size: 90%;
+$code__line-block__text-align: justify;
+$code__line-block__color: $color__black;
+// __keyword & __name & __opt-arg
+$param__keyword-name-opt-arg__color: $color__black;
+// __name & __opt-arg - before & after
+$param__name-opt-arg__font-size: $base__font-size + 0.75;
+// __name - before & after
+$param__name__color: $primary-color-dark;
+// __opt-arg - before & after
+$param__opt-arg__color: $accent-color;
+
+
+// *--------- PROJECT STRUCTURE ---------*
+// .branch
+$branch__border-left: 1px dashed darken($divider-color, 15%);
+// .branch ::after ::before
+$branch-before-after__background: lighten($primary-color-dark, 5%);
+// .branch .leaf-top ::before
+$branch__leaf-top-before__border-top: $branch__border-left;
+// .branch .leaf-top ::after
+$branch__leaf-top-after__background: $branch-before-after__background;
+// .branch .leaf-bottom ::before
+$branch__leaf-bottom-before__border-left: $branch__border-left;
+
+
+// *--------- TABLE ---------*
+// __header
+$table__header__background: lighten($primary-color-dark, 5%);
+$table__header__font-weight: $base__font-weight;
+$table__header__color: $color__white;
+$table__header__border: 1px solid $table__header__background;
+$table__header__border-right: 1px solid lighten($divider-color, 5%);
+// __header :last-child
+$table__header-l-c__border-right: $table__header__border;
+// .table
+$table__border-bottom: 2px solid $table__header__background;
+// __row
+$table__row__transition: 0.2s background ease;
+// __row :hover
+$table__row-h__background: lighten($divider-color, 24%);
+// __data
+$table__data__border: 1px solid $divider-color;
+// __data :first-child
+$table__data-f-c__text-align: center;
+// __row-counter
+$table__row-counter__background: $color__white;
+$table__row-counter__font-size: 11.5px;
+$table__row-counter__text-align: $table__data-f-c__text-align;
+$table__row-counter__color: $color__black;
+$table__row-counter__border-right: $table__data__border;
+$table__row-counter__border-bottom: $table__data__border;
+
+
+// *--------- LINKS ---------*
+$a__text-decoration: none;
+$a__color: darken($color__navy-blue, 4%);
+$a__transition: 0.25s color ease;
+// a :link - :visited
+$a__link-visited__color: $a__color;
+// a :hover
+$a__hover__color: $primary-color;
+// a :active
+$a__active__color: $primary-color-dark;
+
+
+// ---------------------
+//     MODULES
+// ---------------------
+
+
+// *--------- LANGUAGE SETTINGS ---------*
+// __link
+$l-s-link__font-size: $base__font-size - 0.2;
+$l-s-link__text-transform: uppercase;
+$l-s-link__padding: 0.5em 1em;
+$l-s-link__border: 1px solid $divider-color;
+$l-s-link__transition: all 0.25s ease;
+$l-s-link__color: $secondary-text-color;
+// __link-active
+$l-s-link-active__background-color: lighten($primary-color, 4%);
+$l-s-link-active__box-shadow: 0 1px 1px rgba($color__black, .15), inset 0 0 8px rgba(30, 40, 50, .5);
+$l-s-link-active__color: $color__white;
+
+
+// ---------------------
+//     PAGES
+// ---------------------
+
+
+// *--------- README ---------*
+// __info
+$readme__info__padding: 0 0 0.125em 1em;
+$readme__info__border-left: 0.25em solid $primary-color-dark;
+$readme__info__color: $secondary-text-color;
+
+
+// *--------- NOTFOUND ---------*
+// __header
+$notfound-page__header__text-align: center;
+// __title
+$notfound-page__title__margin-bottom: #{(3 / 16)}em;
+// __info
+$notfound-page__info__color: $secondary-text-color;
+// __button
+$notfound-page__button__font-size: $base__font-size - 0.2;
+$notfound-page__button__font-weight: $font-weight__bold;
+$notfound-page__button__text-transform: uppercase;
+$notfound-page__button__padding: 1em;
+$notfound-page__button__border: 1px solid rgba($color__black, 0.25);
+$notfound-page__button__box-shadow: 0 2.5px 5px 0 rgba($color__black, 0.25);
+$notfound-page__button__transition: 0.25s background ease;
+// __button-primary
+$notfound-page__button-primary__background: lighten($primary-color, 4%);
+$notfound-page__button-primary__color: $color__white;
+$notfound-page__button-primary__border: 1px solid rgba($notfound-page__button-primary__background, 0.25);
+// __button-primary :link & :visited
+$notfound-page__button-primary-l-v__color: $notfound-page__button-primary__color;
+// __button-primary :hover
+$notfound-page__button-primary-hover__background: $primary-color-dark;
+// __button-primary :active
+$notfound-page__button-primary-active__background: $notfound-page__button-primary-hover__background;
+
+
+// ---------------------
+//     LAYOUT
+// ---------------------
+
+
+// *--------- GENERAL ---------*
+$box-sizing: border-box;
+// html
+$html__line-height: $base__line-height;
+// body
+$body__font-size: $base__font-size;
+$body__color: $primary-text-color;
+
+
+// *--------- MAIN HEADER ---------*
+
+
+// *--------- MAIN WRAPPER ---------*
+// [ui-view]
+$ui-view__transition: 0.25s all ease;
+// .ng-enter
+$ui-view__ng-enter__opacity: 0;
+$ui-view__ng-enter__transform: scale3d(.95, .95, .95);
+// .ng-enter-active
+$ui-view__ng-enter-active__opacity: 1;
+$ui-view__ng-enter-active__transform: scale3d(1, 1, 1);
+// .ng-leave
+$ui-view__ng-leave-active__transform: translate3d(0, 0, 0);
+// .ng-leave-active
+$ui-view__ng-leave-active__opacity: 0;
+
+
+// *--------- MAIN FOOTER ---------*
+// __copyright
+$main-footer__copyright__font-size: $base__font-size * 0.80;
+$main-footer__copyright__font-weight: $base__font-weight;
+
+
+// ---------------------
+//     BASE
+// ---------------------
+
+
+// *--------- EXTENDS ---------*
+// %Pr-Pn__page
+$Pr-Pn__page__background: $color__white;
+$Pr-Pn__page__border: 1px solid rgba($color__black, 0.1);
+$Pr-Pn__page__box-shadow: 0 3px 6px rgba($color__black, 0.15), 0 3px 6px rgba($color__black, 0.24);
+// %paragraphs
+$paragraphs__line-height: 1.3;
+$paragraphs__text-align: justify;
+// %Pr-Ca__anchor
+$Pr-Ca__anchor__transition: opacity 0.1s ease;
+$Pr-Ca__anchor__margin-left: #{(3 / 16)}em;
+

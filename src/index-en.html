@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+  <head>
+    <!--Define Unicode-->
+    <meta charset="utf-8">
+    <!--Define Base URL Address-->
+    <base href="http://localhost:3000/">
+    <!--Define a Compatibility with IE-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--Define Flexible Viewport for Mobile Devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Phone Numbers Detection-->
+    <meta name="format-detection" content="telephone=no">
+    <!--Search Engine Optimization Sources-->
+    <title>Kickstart Project - Angular v1.x Template</title>
+    <meta name="description" content="The web application template was created for preparation of automated and configured development environment to work with Angular v1.x allowing rapid project start.">
+    <meta name="keywords" content="szablon template aplikacja application web automatyzacja automation skonfigurowana configured środowisko environment deweloper developer front front-end projekt project angular material ng app google node nodejs npm bower gulp gulpjs karma jasmine">
+    <meta name="author" content="Mateusz Archiciński">
+    <meta property="og:url" content="http://localhost:3000/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kickstart Project - Angular v1.x Template">
+    <meta property="og:description" content="The web application template created for preparation of automated and configured development environment to work with Angular v1.x allowing rapid project start.">
+    <meta property="og:image" content="http://localhost:3000/tile-1200x630px.png">
+    <meta name="robots" content="index, follow, noodp, noydir">
+    <!--Icon Sources-->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!--Fonts Sources-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <!--Google Chrome - Theme Color-->
+    <meta name="theme-color" content="#F44336">
+    <!--Cascading Style Sheets Sources-->
+    <!--build:css css/main.min.css-->
+    <!--Bower Components-->
+    <!--bower:css-->
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
+    <!--endbower-->
+    <!--Application Style Sheets Sources-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--endbuild-->
+  </head>
+  <body ng-cloak="">
+    <!--JavaScripts Sources-->
+    <!--build:js js/main.min.js-->
+    <!--Bower Components-->
+    <!--bower:js-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!--endbower-->
+    <!--Application Initialize / Configuration-->
+    <script src="js/app.js"></script>
+    <script src="js/app.config.js"></script>
+    <!--Application Controllers-->
+    <script src="js/controllers/readmeController.js"></script>
+    <script src="js/controllers/notfoundController.js"></script>
+    <script src="js/controllers/translateController.js"></script>
+    <!--Application Directives-->
+    <!--Application Services-->
+    <script src="js/services/urlParamsProvider.js"></script>
+    <!--endbuild-->
+    <!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p><![endif]-->
+    <main>
+      <!--Language Settings-->
+      <div class="language-settings" ng-controller="translateController">
+        <ul class="language-settings__list">
+          <li><a class="language-settings__link" ng-click="translate('pl')" ng-class="{'language-settings__link-active': language === 'pl'}" href="" rel="help">pl</a></li>
+          <li><a class="language-settings__link" ng-click="translate('en')" ng-class="{'language-settings__link-active': language === 'en'}" href="" rel="help">en</a></li>
+        </ul>
+      </div>
+      <!--Main Header-->
+      <header class="main-header">
+        <h1 class="main-header__title primary-heading text-center">Kickstart Project</h1>
+      </header>
+      <!--Main Wrapper-->
+      <div class="main-wrapper">
+        <div class="main-wrapper__container">
+          <div ui-view=""></div>
+        </div>
+      </div>
+      <!--Main Footer-->
+      <footer class="main-footer">
+        <p class="main-footer__paragraph text-center"><small class="main-footer__copyright">&copy; Mateusz Archiciński</small></p>
+      </footer>
+    </main>
+  </body>
+</html>

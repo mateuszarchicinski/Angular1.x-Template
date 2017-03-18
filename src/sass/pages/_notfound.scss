@@ -1,0 +1,77 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* NOTFOUND *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// __header
+$notfound-page__header__text-align: center !default;
+// __title
+$notfound-page__title__margin-bottom: #{(3 / 16)}em !default;
+// __info
+$notfound-page__info__color: $secondary-text-color !default;
+// __button
+$notfound-page__button__font-size: 0.8em !default;
+$notfound-page__button__font-weight: 500 !default;
+$notfound-page__button__text-transform: uppercase !default;
+$notfound-page__button__padding: 1em !default;
+$notfound-page__button__border: 1px solid rgba($color__black, 0.25) !default;
+$notfound-page__button__box-shadow: 0 2.5px 5px 0 rgba($color__black, 0.25) !default;
+$notfound-page__button__transition: 0.25s background ease !default;
+// __button-primary
+$notfound-page__button-primary__background: lighten($primary-color, 4%) !default;
+$notfound-page__button-primary__color: $color__white !default;
+$notfound-page__button-primary__border: 1px solid rgba($notfound-page__button-primary__background, 0.25) !default;
+// __button-primary :link & :visited
+$notfound-page__button-primary-l-v__color: $notfound-page__button-primary__color !default;
+// __button-primary :hover
+$notfound-page__button-primary-hover__background: $primary-color-dark !default;
+// __button-primary :active
+$notfound-page__button-primary-active__background: $notfound-page__button-primary-hover__background !default;
+
+
+.notfound-page {
+    @extend %Pr-Pn__page;
+    width: 350px;
+    padding: 35px 45px 45px;
+    @media screen and (max-width: $break-point__3) {
+        width: 100%;
+        padding: 30px 20px 40px;
+    }
+    &__header {
+        text-align: $notfound-page__header__text-align;
+    }
+    &__title {
+        display: inline-block;
+        margin-bottom: $notfound-page__title__margin-bottom;
+    }
+    &__info {
+        @extend %paragraphs;
+        color: $notfound-page__info__color;
+    }
+    &__button {
+        display: inline-block;
+        padding: $notfound-page__button__padding;
+        font-size: $notfound-page__button__font-size;
+        font-weight: $notfound-page__button__font-weight;
+        text-transform: $notfound-page__button__text-transform;
+        border-radius: 2px;
+        border: $notfound-page__button__border;
+        box-shadow: $notfound-page__button__box-shadow;
+        transition: $notfound-page__button__transition;
+        &-primary {
+            background: $notfound-page__button-primary__background;
+            color: $notfound-page__button-primary__color;
+            border: $notfound-page__button-primary__border;
+            &:link,
+            &:visited {
+                color: $notfound-page__button-primary-l-v__color;
+            }
+            &:hover {
+                background: $notfound-page__button-primary-hover__background;
+            }
+            &:active {
+                background: $notfound-page__button-primary-active__background;
+            }
+        }
+    }
+}

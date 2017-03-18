@@ -1,0 +1,42 @@
+//-
+    imagesSpriteSprite
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.imagesSprite[0][0]} 
+        strong spriteCssName
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[0][1]} 
+        strong "_sprite"
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[0][2]}
+    li #{data.articles.gulpTasks.table.rows.imagesSprite[1][0]} 
+        strong .jpg
+        | , 
+        strong .png
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[1][1]} 
+        strong .gif
+        | .
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.imagesSprite[2][0]} 
+        code.code__line
+            | img > sprites_sources
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[2][1]} 
+        strong .scss
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[2][2]}
+        a(href="https://github.com/Ensighten/spritesmith#spritesmith--" target="_blank" rel="help") gulp-spritesmith
+        | ).
+    li #{data.articles.gulpTasks.table.rows.imagesSprite[3][0]} 
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.imagesSprite[3][1]}
+        a(href="https://github.com/robrich/gulp-if#gulp-if-api" target="_blank" rel="help") gulp-if
+        | #{data.articles.gulpTasks.table.rows.imagesSprite[3][2]} 
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.imagesSprite[3][3]} 
+        strong .png
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[3][4]} 
+        code.code__line
+            | img
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[3][5]} 
+        strong .scss
+        |  #{data.articles.gulpTasks.table.rows.imagesSprite[3][6]} 
+        code.code__line
+            | sass > components > sprites
+        | .

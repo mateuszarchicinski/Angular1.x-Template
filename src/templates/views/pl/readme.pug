@@ -1,0 +1,36 @@
+//-
+    PL - Readme
+
+//Readme View
+section(id="Readme" class="readme")
+    header.readme__header
+        h2.readme__title.secondary-heading #{data.section[0].headline}
+            a(href="#Readme" rel="help" class="readme__anchor anchor")
+        p.readme__info #{data.section[0].info[0][0]} 
+            a(href="https://nodejs.org/en/" target="_blank" rel="help") NodeJS
+            | , 
+            a(href="https://www.npmjs.com/" target="_blank" rel="help") NPM
+            | , 
+            a(href="https://bower.io/" target="_blank" rel="help") Bower
+            | , 
+            a(href="http://gulpjs.com/" target="_blank" rel="help") GulpJS
+            |  #{data.section[0].info[0][1]} 
+            a(href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help") Karma
+            | #{data.section[0].info[0][2]} 
+            a(href="https://angularjs.org/" target="_blank" rel="help") Angular v1.x - MVC Framework
+            | .
+        p.readme__info #{data.section[0].info[1][0]} 
+            strong Restful API - NodeJS & ExpressJS
+            |  #{data.section[0].info[1][1]} 
+            a(href="https://github.com/mateuszarchicinski/Restful-API--NodeJS-ExpressJS" target="_blank" rel="help") #{data.section[0].info[1][2]}
+            | .
+    .readme__body
+        include ../../components/articles/_usage
+        include ../../components/articles/_configuration
+        include ../../components/articles/_projectStructure
+        include ../../components/articles/_npmModules
+        include ../../components/articles/_bowerComponents
+        include ../../components/articles/_gulpTasks
+        include ../../components/articles/_testing
+        include ../../components/articles/_changelog
+        include ../../components/articles/_license

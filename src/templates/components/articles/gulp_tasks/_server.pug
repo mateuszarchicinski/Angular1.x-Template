@@ -1,0 +1,15 @@
+//-
+    Server
+
+ol.article__list
+    li
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.server[0][0][0]} 
+            a(href="http://localhost:3000/" target="_blank" rel="help") http://localhost:3000/
+            |  #{data.articles.gulpTasks.table.rows.server[0][0][1]}
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.server[0][1][0]}
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.server[0][2][0]}
+            strong External
+            |  #{data.articles.gulpTasks.table.rows.server[0][2][1]}
+        p.article__paragraph #{data.articles.gulpTasks.table.rows.server[0][3][0]} 
+            a(href="https://www.browsersync.io/docs/options" target="_blank" rel="help") #{data.articles.gulpTasks.table.rows.server[0][3][1]}
+            | .

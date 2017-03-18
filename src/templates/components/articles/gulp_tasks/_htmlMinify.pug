@@ -1,0 +1,12 @@
+//-
+    HtmlMinify
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.htmlMinify[0][0]} 
+        strong .html
+        | .
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.htmlMinify[1][0]}
+        a(href="https://github.com/jonschlinkert/gulp-htmlmin#gulp-htmlmin---" target="_blank" rel="help") gulp-htmlmin
+        | ).
+    li #{data.articles.gulpTasks.table.rows.htmlMinify[2][0]}

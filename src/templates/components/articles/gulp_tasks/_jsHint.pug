@@ -1,0 +1,16 @@
+//-
+    JsHint
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.jsHint[0][0]} 
+        strong .js
+        | .
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.jsHint[1][0]}
+        a(href="http://jshint.com/docs/" target="_blank" rel="help") gulp-jshint
+        | ).
+    li #{data.articles.gulpTasks.table.rows.jsHint[2][0]} 
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.jsHint[2][1]}
+        a(href="https://github.com/spalger/gulp-jshint#reporters" target="_blank" rel="help") Reporter
+        | ).

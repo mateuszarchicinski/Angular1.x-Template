@@ -1,0 +1,36 @@
+//-
+    Bower Components
+
+article(id="BowerComponents" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.bowerComponents.headline}
+            a(href="#BowerComponents" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.bowerComponents.paragraph[0][0]} 
+            a(href="https://angularjs.org/" target="_blank" rel="help") Angular v1.x - MVC Framework
+            |  #{data.articles.bowerComponents.paragraph[0][1]} 
+            a(href="https://material.angularjs.org/latest/" target="_blank" rel="help") Angular Material v1.x - UI Component
+            |  (
+            strong bower.json
+            | ):
+        ul.article__list.article__list-points
+            - for(var i = 0; i < 7; i++)
+                li
+                    a(href=data.articles.bowerComponents.list[i].link  target="_blank" rel="help") #{data.articles.bowerComponents.list[i].name}
+        p.article__paragraph #{data.articles.bowerComponents.paragraph[1][0]}
+        ul.article__list.article__list-points
+            - for(var i = 7; i < 10; i++)
+                li
+                    a(href=data.articles.bowerComponents.list[i].link  target="_blank" rel="help") #{data.articles.bowerComponents.list[i].name}
+        p.article__paragraph #{data.articles.bowerComponents.paragraph[2][0]} 
+            code.code__line bower install
+            | .
+        p.article__paragraph #{data.articles.bowerComponents.paragraph[3][0]} 
+            a(href="https://bower.io/" target="_blank" rel="help") Bower
+            |  #{data.articles.bowerComponents.paragraph[3][1]} 
+            strong index.html
+            | #{data.articles.bowerComponents.paragraph[3][2]} 
+            strong gulpfile.js
+            |  #{data.articles.bowerComponents.paragraph[3][3]} 
+            strong wiredep
+            | .

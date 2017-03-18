@@ -1,0 +1,21 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* DIRECTORIES *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+.directory {
+    &__root,
+    &__close,
+    &__open {
+        display: inline-block;
+    }
+    &__root {
+        @include sprite($folder-special-black);
+    }
+    &__close {
+        @include sprite($folder-black);
+    }
+    &__open {
+        @include sprite($folder-open-black);
+    }
+}

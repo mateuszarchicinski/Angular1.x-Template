@@ -1,0 +1,31 @@
+//~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* GENERAL *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+$box-sizing: border-box !default;
+// html
+$html__line-height: 1.2 !default;
+// body
+$body__font-size: 1em !default;
+$body__color: $primary-text-color !default;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: $box-sizing;
+}
+
+html {
+    line-height: $html__line-height;
+}
+
+body {
+    font-size: $body__font-size;
+    color: $body__color;
+}
+
+.clearfix {
+    @include clearfix;
+}

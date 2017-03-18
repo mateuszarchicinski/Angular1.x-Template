@@ -1,0 +1,35 @@
+//-
+    Configuration
+
+article(id="Configuration" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.configuration.headline}
+            a(href="#Configuration" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.configuration.paragraph[0][0]} 
+            strong project.config.js
+            | #{data.articles.configuration.paragraph[0][1]} 
+        ul.article__list.article__list-points
+            li #{data.articles.configuration.paragraph[0][2]} 
+                a(href="http://www.webopedia.com/TERM/S/SEO.html", target="_blank" rel="help") SEO
+                | ),
+            li #{data.articles.configuration.paragraph[0][3]}
+            li #{data.articles.configuration.paragraph[0][4]}
+            li #{data.articles.configuration.paragraph[0][5]}
+            li #{data.articles.configuration.paragraph[0][6]}
+            li #{data.articles.configuration.paragraph[0][7]} 
+                strong .bowerrc
+                | ),
+            li #{data.articles.configuration.paragraph[0][8]}
+            li #{data.articles.configuration.paragraph[0][9]}
+            li #{data.articles.configuration.paragraph[0][10]} 
+                a(href="https://www.google.com/analytics/" target="_blank" rel="help") Google Analytics
+                | ,
+            li #{data.articles.configuration.paragraph[0][11]} 
+                a(href="https://developers.facebook.com/docs/apps/register" target="_blank" rel="help") Facebook Developers
+                | .
+        p.article__paragraph #{data.articles.configuration.paragraph[1][0]} 
+            strong gulpfile.js
+            |  #{data.articles.configuration.paragraph[1][1]} 
+            strong PROJECT_CONFIG
+            | .

@@ -1,0 +1,30 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* BREAK LINES *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+@media screen and (max-width: $break-point__1) {
+    .br__1 {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: $break-point__2) {
+    .br__2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $break-point__3) {
+    .br__3 {
+        display: none;
+    }
+}
+
+
+html[lang="en"] {
+    .br__1 {
+        display: none;
+    }
+}

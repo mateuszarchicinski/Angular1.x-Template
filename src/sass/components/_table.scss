@@ -1,0 +1,106 @@
+//~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* TABLE *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~//
+
+
+// __header
+$table__header__background: lighten($primary-color-dark, 5%) !default;
+$table__header__font-weight: 400 !default;
+$table__header__color: $color__white !default;
+$table__header__border: 1px solid $table__header__background !default;
+$table__header__border-right: 1px solid lighten($divider-color, 5%) !default;
+// __header :last-child
+$table__header-l-c__border-right: $table__header__border !default;
+// .table
+$table__border-bottom: 2px solid $table__header__background !default;
+// __row
+$table__row__transition: 0.2s background ease !default;
+// __row :hover
+$table__row-h__background: lighten($divider-color, 24%) !default;
+// __data
+$table__data__border: 1px solid $divider-color !default;
+// __data :first-child
+$table__data-f-c__text-align: center !default;
+// __row-counter
+$table__row-counter__background: $color__white !default;
+$table__row-counter__font-size: 11.5px !default;
+$table__row-counter__text-align: $table__data-f-c__text-align !default;
+$table__row-counter__color: $color__black !default;
+$table__row-counter__border-right: $table__data__border !default;
+$table__row-counter__border-bottom: $table__data__border !default;
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: $table__border-bottom;
+    &__body {
+        counter-reset: elementsCounter-1;
+    }
+    &__row {
+        counter-increment: elementsCounter-1;
+        transition: $table__row__transition;
+        &:hover {
+            background: $table__row-h__background;
+        }
+        &-counter {
+            @include before {
+                content: counter(elementsCounter-1) ".";
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                background: $table__row-counter__background;
+                position: absolute;
+                display: inline-table;
+                left: 0;
+                top: 0;
+                font-size: $table__row-counter__font-size;
+                text-align: $table__row-counter__text-align;
+                color: $table__row-counter__color;
+                border-right: $table__row-counter__border-right;
+                border-bottom: $table__row-counter__border-bottom;
+            }
+        }
+    }
+    &__header,
+    &__data {
+        padding: 25px 10px;
+        &:nth-child(n+2) {
+            .param__name,
+            .param__opt-arg {
+                white-space: normal;
+            }
+        }
+        .code__block {
+            margin-left: -12px;
+            margin-right: 5px;
+        }
+    }
+    &__header {
+        background: $table__header__background;
+        font-weight: $table__header__font-weight;
+        color: $table__header__color;
+        border: $table__header__border;
+        border-right: $table__header__border-right;
+        &:last-child {
+            border-right: $table__header-l-c__border-right;
+        }
+    }
+    &__data {
+        @extend %paragraphs;
+        border: $table__data__border;
+        &:first-child {
+            position: relative;
+            text-align: $table__data-f-c__text-align;
+        }
+        .rotate-content {
+            @media screen and (max-width: $break-point__2) {
+                line-height: 49px;
+                transform: rotate(180deg);
+                writing-mode: vertical-rl;
+                text-orientation: sideways-right;
+                margin: 0;
+            }
+        }
+    }
+}

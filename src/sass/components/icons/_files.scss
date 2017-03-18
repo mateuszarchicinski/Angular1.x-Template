@@ -1,0 +1,21 @@
+//~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* FILES *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~//
+
+
+.file {
+    &__json,
+    &__js,
+    &__xml,
+    &__html,
+    &__sass,
+    &__pug,
+    &__css {
+        @include sprite($code-black);
+        display: inline-block;
+    }
+    &__img {
+        @include sprite($image-black);
+        display: inline-block;
+    }
+}

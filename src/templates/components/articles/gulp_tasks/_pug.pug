@@ -1,0 +1,49 @@
+//-
+    Pug
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.pug[0][0]} 
+        strong langValue
+        |  #{data.articles.gulpTasks.table.rows.pug[0][1]} 
+        strong "pl"
+        |  #{data.articles.gulpTasks.table.rows.pug[0][2]}
+    li #{data.articles.gulpTasks.table.rows.pug[1][0]} 
+        strong .pug
+        | .
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.pug[2][0]}
+        a(href="https://github.com/colynb/gulp-data#gulp-data" target="_blank" rel="help") gulp-data
+        | ).
+    
+    li #{data.articles.gulpTasks.table.rows.pug[3][0]} 
+        strong .pug
+        |  #{data.articles.gulpTasks.table.rows.pug[3][1]} 
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.pug[3][2]}
+        a(href="https://pugjs.org/api/getting-started.html" target="_blank" rel="help") gulp-pug
+        | ).
+    li #{data.articles.gulpTasks.table.rows.pug[4][0]} 
+        strong Link
+        |  #{data.articles.gulpTasks.table.rows.pug[4][1]} 
+        strong Script
+        |  #{data.articles.gulpTasks.table.rows.pug[4][2]}
+        a(href="https://github.com/taptapship/wiredep#wiredep--" target="_blank" rel="help") wiredep
+        | ):
+        pre.code__block
+            code.code__line &lt;!--bower:css-->
+            br
+            code.code__line // &lt;link href="">
+            br
+            code.code__line &lt;!--endbower-->
+            br
+            br
+            code.code__line &lt;!--bower:js-->
+            br
+            code.code__line // &lt;script src="">
+            br
+            code.code__line &lt;!--endbower-->
+    li #{data.articles.gulpTasks.table.rows.pug[5][0]} 
+        strong index-en.html
+        |  #{data.articles.gulpTasks.table.rows.pug[5][1]} 
+        strong index-pl.html
+        |  #{data.articles.gulpTasks.table.rows.pug[5][2]}

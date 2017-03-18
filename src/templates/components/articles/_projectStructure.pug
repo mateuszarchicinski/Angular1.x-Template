@@ -1,0 +1,189 @@
+//-
+    Project Structure
+
+article(id="ProjectStructure" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.projectStructure.headline}
+            a(href="#ProjectStructure" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.projectStructure.paragraph[0][0]} 
+            strong project.config.js
+            br.br__1
+            |  #{data.articles.projectStructure.paragraph[0][1]} 
+            strong .bowerrc
+            | #{data.articles.projectStructure.paragraph[0][2]} 
+        ul.project-structure
+            li
+                i.branch__icon.directory__root
+                | #{data.articles.projectStructure.paragraph[1][0]}
+                ul.branch
+                    li.branch__leaf-top
+                        i.branch__icon.directory__close
+                        | dist
+                    li.branch__leaf
+                        i.branch__icon.directory__close
+                        | node_modules
+                    li.branch__leaf-bottom
+                        i.branch__icon.directory__open
+                        | src
+                        ul.branch
+                            li.branch__leaf-top
+                                i.branch__icon.directory__close
+                                | bower_components
+                            li.branch__leaf-bottom
+                                i.branch__icon.directory__open
+                                |css
+                                ul.branch
+                                    li.branch__leaf-top
+                                        i.branch__icon.directory__open
+                                        | maps
+                                    li.branch__leaf-bottom
+                                        i.branch__icon.file__css
+                                        | main.css
+                            li
+                                i.branch__icon.directory__open
+                                | files
+                            li.branch__leaf
+                                i.branch__icon.directory__open
+                                | fonts
+                            li.branch__leaf-bottom
+                                i.branch__icon.directory__open
+                                | images
+                                ul.branch
+                                    li.branch__leaf-top
+                                        i.branch__icon.directory__open
+                                        | sprites_sources
+                                    li.branch__leaf-bottom
+                                        i.branch__icon.file__img
+                                        | sprite.png
+                            li
+                                i.branch__icon.directory__open
+                                | js
+                                ul.branch
+                                    li.branch__leaf-top
+                                        i.branch__icon.directory__open
+                                        | controllers
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | directives
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | services
+                                    li.branch__leaf
+                                        i.branch__icon.file__js
+                                        | app.config.js
+                                    li.branch__leaf-bottom
+                                        i.branch__icon.file__js
+                                        | app.js
+                            li
+                                i.branch__icon.directory__open
+                                | sass
+                                ul.branch
+                                    li.branch__leaf-top
+                                        i.branch__icon.directory__open
+                                        | base
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | components
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | helpers
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | layout
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | modules
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | pages
+                                    li.branch__leaf-bottom
+                                        i.branch__icon.file__sass
+                                        | main.scss
+                            li
+                                i.branch__icon.directory__open
+                                | templates
+                                ul.branch
+                                    li.branch__leaf-top
+                                        i.branch__icon.directory__open
+                                        | components
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | layout
+                                    li.branch__leaf
+                                        i.branch__icon.directory__open
+                                        | views
+                                    li.branch__leaf
+                                        i.branch__icon.file__pug
+                                        | index-en.pug
+                                    li.branch__leaf-bottom
+                                        i.branch__icon.file__pug
+                                        | index-pl.pug
+                            li
+                                i.branch__icon.directory__open
+                                | views
+                                ul.branch
+                                    li.branch__leaf-top
+                                        i.branch__icon.directory__open
+                                        | en
+                                    li.branch__leaf-bottom
+                                        i.branch__icon.directory__open
+                                        | pl
+                            li
+                                i.branch__icon.file__img
+                                | apple-touch-icon.png
+                            li.branch__leaf
+                                i.branch__icon.file__xml
+                                | browserconfig.xml
+                            li.branch__leaf
+                                i.branch__icon.file__xml
+                                | crossdomain.xml
+                            li.branch__leaf
+                                i.branch__icon.file__img
+                                | favicon.ico
+                            li.branch__leaf
+                                i.branch__icon.file__html
+                                | index-en.html
+                            li.branch__leaf
+                                i.branch__icon.file__html
+                                | index-pl.html
+                            li.branch__leaf
+                                i.branch__icon.file__img
+                                | tile.png
+                            li.branch__leaf
+                                i.branch__icon.file__img
+                                | tile-1200x630px.png
+                            li.branch__leaf-bottom
+                                i.branch__icon.file__img
+                                | tile-wide.png
+                    li
+                        i.branch__icon.directory__open
+                        | test
+                        ul.branch
+                            li.branch__leaf-top
+                                i.branch__icon.directory__open
+                                | spec
+                            li.branch__leaf-bottom
+                                i.branch__icon.file__js
+                                | karma.conf.js
+                    li
+                        i.branch__icon.file__json
+                        | .bowerrc
+                    li.branch__leaf
+                        i.branch__icon.file__json
+                        | bower.json
+                    li.branch__leaf
+                        i.branch__icon.file__js
+                        | gulpfile.js
+                    li.branch__leaf
+                        i.branch__icon.file__json
+                        | package.json
+                    li.branch__leaf
+                        i.branch__icon.file__js
+                        | project.config.js
+                    li.branch__leaf-bottom
+                        i.branch__icon.file__json
+                        | project.data.json
+        p.article__paragraph #{data.articles.projectStructure.paragraph[2][0]} 
+            strong gulpfile.js
+            | .

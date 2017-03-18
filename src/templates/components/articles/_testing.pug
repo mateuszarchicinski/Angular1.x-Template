@@ -1,0 +1,21 @@
+//-
+    Testing
+
+article(id="Testing" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.testing.headline}
+            a(href="#Testing" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.testing.paragraph[0][0]} 
+            code.code__line gulp js:test
+            | . #{data.articles.testing.paragraph[0][1]} 
+            a(href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help") Karma
+            | . #{data.articles.testing.paragraph[0][2]} 
+            a(href="https://jasmine.github.io/" target="_blank" rel="help") Jasmine
+            | #{data.articles.testing.paragraph[0][3]} 
+            a(href="http://phantomjs.org/" target="_blank" rel="help") PhantomJS
+            |  #{data.articles.testing.paragraph[0][4]} 
+            a(href="https://www.npmjs.com/package/karma-spec-reporter" target="_blank" rel="help") Spec
+            | . #{data.articles.testing.paragraph[0][5]} 
+            code.code__line #{data.articles.testing.paragraph[0][6]} > Test > Karma.conf.js / Spec
+            | .

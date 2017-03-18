@@ -1,0 +1,540 @@
+
+<!--Readme View-->
+<section class="readme" id="Readme">
+  <header class="readme__header">
+    <h2 class="readme__title secondary-heading">Angular v1.x Template<a class="readme__anchor anchor" href="#Readme" rel="help"></a></h2>
+    <p class="readme__info">The template provides configured and automated work environment with the possibility of further development functionality. It uses technologies such as <a href="https://nodejs.org/en/" target="_blank" rel="help">NodeJS</a>, <a href="https://www.npmjs.com/" target="_blank" rel="help">NPM</a>, <a href="https://bower.io/" target="_blank" rel="help">Bower</a>, <a href="http://gulpjs.com/" target="_blank" rel="help">GulpJS</a> and <a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help">Karma</a>. The basic configuration is prepared for the development of Web application client-side in technology <a href="https://angularjs.org/" target="_blank" rel="help">Angular v1.x - MVC Framework</a>.</p>
+    <p class="readme__info">An additional advantage is a very good cooperation with my other project <strong>Restful API - NodeJS & ExpressJS</strong> which providing support and more functionality on the server-side about that you can read <a href="https://github.com/mateuszarchicinski/Restful-API--NodeJS-ExpressJS" target="_blank" rel="help">here</a>.</p>
+  </header>
+  <div class="readme__body">
+    <article class="article" id="Usage">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Usage<a class="article__anchor anchor" href="#Usage" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">Project <strong>Angular 1.x Template</strong> is available only via <a href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help">Github</a>. Installation examples below. With first two required is version control system <a href="https://git-scm.com/" target="_blank" rel="help">Git</a>.</p>
+        <ol class="article__list article__list-15">
+          <li>Using console create a new directory and go into him:
+            <pre class="code__block"><code class="code__line">mkdir project-directory && cd project-directory</code></pre>In a new directory initialize environment by using command <code class="code__line">git init</code> and then call:
+            <pre class="code__block"><code class="code__line">git pull <a class="part-hidden invert" href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help">repository</a><span class="part-visible invert">https://github.com/mateuszarchicinski/Angular1.x-Template</span></code></pre>
+          </li>
+          <li>In the console, use a command to clone entire repository, which thereby creates a new directory:
+            <pre class="code__block"><code class="code__line">git clone <a class="part-hidden invert" href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help">repository</a><span class="part-visible invert">https://github.com/mateuszarchicinski/Angular1.x-Template</span></code></pre>
+          </li>
+          <li>Manually download the latest stable version from the <a href="https://github.com/mateuszarchicinski/Angular1.x-Template/releases" target="_blank">Releases Page</a>.</li>
+        </ol>
+        <p class="article__paragraph">After completing any installation. Go to your project and call command <code class="code__line">npm install</code> and <code class="code__line">bower install</code>.</p>
+        <p class="article__paragraph">At this point, you can start using all defined tasks from <strong>gulpfile.js</strong>. Table with all tasks <a href="#GulpTasks" rel="help">here</a>.</p>
+      </div>
+    </article>
+    <article class="article" id="Configuration">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Configuration<a class="article__anchor anchor" href="#Configuration" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">Global settings are available in file <strong>project.config.js</strong>, which allows you to change: </p>
+        <ul class="article__list article__list-points">
+          <li>host (used for <a href="http://www.webopedia.com/TERM/S/SEO.html" target="_blank" rel="help">SEO</a>),</li>
+          <li>application name,</li>
+          <li>supported languages,</li>
+          <li>value of href attribute in tag base,</li>
+          <li>name of configuration file and data,</li>
+          <li>directory work and production (also requires manual update file <strong>.bowerrc</strong>),</li>
+          <li>accesses FTP,</li>
+          <li>keys to external APIs,</li>
+          <li>tracking ID <a href="https://www.google.com/analytics/" target="_blank" rel="help">Google Analytics</a>,</li>
+          <li>application ID <a href="https://developers.facebook.com/docs/apps/register" target="_blank" rel="help">Facebook Developers</a>.</li>
+        </ul>
+        <p class="article__paragraph">Additionally, it can help us to store all sorts of variables which we will use individually. In file <strong>gulpfile.js</strong> we refer to it by variable <strong>PROJECT_CONFIG</strong>.</p>
+      </div>
+    </article>
+    <article class="article" id="ProjectStructure">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Project Structure<a class="article__anchor anchor" href="#ProjectStructure" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">Modifying structure, remember to also make changes in files <strong>project.config.js</strong><br class="br__1"/> and <strong>.bowerrc</strong>. The following recommended project structure. </p>
+        <ul class="project-structure">
+          <li><i class="branch__icon directory__root"></i>Project directory
+            <ul class="branch">
+              <li class="branch__leaf-top"><i class="branch__icon directory__close"></i>dist</li>
+              <li class="branch__leaf"><i class="branch__icon directory__close"></i>node_modules</li>
+              <li class="branch__leaf-bottom"><i class="branch__icon directory__open"></i>src
+                <ul class="branch">
+                  <li class="branch__leaf-top"><i class="branch__icon directory__close"></i>bower_components</li>
+                  <li class="branch__leaf-bottom"><i class="branch__icon directory__open"></i>css
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>maps</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon file__css"></i>main.css</li>
+                    </ul>
+                  </li>
+                  <li><i class="branch__icon directory__open"></i>files</li>
+                  <li class="branch__leaf"><i class="branch__icon directory__open"></i>fonts</li>
+                  <li class="branch__leaf-bottom"><i class="branch__icon directory__open"></i>images
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>sprites_sources</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon file__img"></i>sprite.png</li>
+                    </ul>
+                  </li>
+                  <li><i class="branch__icon directory__open"></i>js
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>controllers</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>directives</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>services</li>
+                      <li class="branch__leaf"><i class="branch__icon file__js"></i>app.config.js</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon file__js"></i>app.js</li>
+                    </ul>
+                  </li>
+                  <li><i class="branch__icon directory__open"></i>sass
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>base</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>components</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>helpers</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>layout</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>modules</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>pages</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon file__sass"></i>main.scss</li>
+                    </ul>
+                  </li>
+                  <li><i class="branch__icon directory__open"></i>templates
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>components</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>layout</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>views</li>
+                      <li class="branch__leaf"><i class="branch__icon file__pug"></i>index-en.pug</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon file__pug"></i>index-pl.pug</li>
+                    </ul>
+                  </li>
+                  <li><i class="branch__icon directory__open"></i>views
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>en</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon directory__open"></i>pl</li>
+                    </ul>
+                  </li>
+                  <li><i class="branch__icon file__img"></i>apple-touch-icon.png</li>
+                  <li class="branch__leaf"><i class="branch__icon file__xml"></i>browserconfig.xml</li>
+                  <li class="branch__leaf"><i class="branch__icon file__xml"></i>crossdomain.xml</li>
+                  <li class="branch__leaf"><i class="branch__icon file__img"></i>favicon.ico</li>
+                  <li class="branch__leaf"><i class="branch__icon file__html"></i>index-en.html</li>
+                  <li class="branch__leaf"><i class="branch__icon file__html"></i>index-pl.html</li>
+                  <li class="branch__leaf"><i class="branch__icon file__img"></i>tile.png</li>
+                  <li class="branch__leaf"><i class="branch__icon file__img"></i>tile-1200x630px.png</li>
+                  <li class="branch__leaf-bottom"><i class="branch__icon file__img"></i>tile-wide.png</li>
+                </ul>
+              </li>
+              <li><i class="branch__icon directory__open"></i>test
+                <ul class="branch">
+                  <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>spec</li>
+                  <li class="branch__leaf-bottom"><i class="branch__icon file__js"></i>karma.conf.js</li>
+                </ul>
+              </li>
+              <li><i class="branch__icon file__json"></i>.bowerrc</li>
+              <li class="branch__leaf"><i class="branch__icon file__json"></i>bower.json</li>
+              <li class="branch__leaf"><i class="branch__icon file__js"></i>gulpfile.js</li>
+              <li class="branch__leaf"><i class="branch__icon file__json"></i>package.json</li>
+              <li class="branch__leaf"><i class="branch__icon file__js"></i>project.config.js</li>
+              <li class="branch__leaf-bottom"><i class="branch__icon file__json"></i>project.data.json</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="article__paragraph">In case error of any functionality back to recommended project structure or manually try to find a bug in file <strong>gulpfile.js</strong>.</p>
+      </div>
+    </article>
+    <article class="article" id="NPMModules">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">NPM Modules<a class="article__anchor anchor" href="#NPMModules" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">List of modules required for proper work all functionality of environment (<strong>package.json</strong>):</p>
+        <ul class="article__list article__list-points">
+          <li><a href="https://bower.io/" target="_blank" rel="help">bower</a></li>
+          <li><a href="https://browsersync.io/" target="_blank" rel="help">browser-sync</a></li>
+          <li><a href="https://www.npmjs.com/package/del" target="_blank" rel="help">del</a></li>
+          <li><a href="http://gulpjs.com/" target="_blank" rel="help">gulp</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-autoprefixer" target="_blank" rel="help">gulp-autoprefixer</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-clean-css" target="_blank" rel="help">gulp-clean-css</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-cli" target="_blank" rel="help">gulp-cli</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-data" target="_blank" rel="help">gulp-data</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-htmlhint" target="_blank" rel="help">gulp-htmlhint</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-htmlmin" target="_blank" rel="help">gulp-htmlmin</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-if" target="_blank" rel="help">gulp-if</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="help">gulp-imagemin</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-jshint" target="_blank" rel="help">gulp-jshint</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-load-plugins" target="_blank" rel="help">gulp-load-plugins</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-plumber" target="_blank" rel="help">gulp-plumber</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-pug" target="_blank" rel="help">gulp-pug</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-pug-lint" target="_blank" rel="help">gulp-pug-lint</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-rename" target="_blank" rel="help">gulp-rename</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-sass" target="_blank" rel="help">gulp-sass</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-sass-lint" target="_blank" rel="help">gulp-sass-lint</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-sourcemaps" target="_blank" rel="help">gulp-sourcemaps</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-tinify" target="_blank" rel="help">gulp-tinify</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="help">gulp-uglify</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-useref" target="_blank" rel="help">gulp-useref</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-util" target="_blank" rel="help">gulp-util</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp.spritesmith" target="_blank" rel="help">gulp.spritesmith</a></li>
+          <li><a href="https://www.npmjs.com/package/htmlhint-stylish" target="_blank" rel="help">htmlhint-stylish</a></li>
+          <li><a href="https://www.npmjs.com/package/imagemin-gifsicle" target="_blank" rel="help">imagemin-gifsicle</a></li>
+          <li><a href="https://www.npmjs.com/package/imagemin-jpegtran" target="_blank" rel="help">imagemin-jpegtran</a></li>
+          <li><a href="https://www.npmjs.com/package/imagemin-optipng" target="_blank" rel="help">imagemin-optipng</a></li>
+          <li><a href="https://www.npmjs.com/package/imagemin-svgo" target="_blank" rel="help">imagemin-svgo</a></li>
+          <li><a href="https://www.npmjs.com/package/jshint-stylish" target="_blank" rel="help">jshint-stylish</a></li>
+          <li><a href="https://www.npmjs.com/package/run-sequence" target="_blank" rel="help">run-sequence</a></li>
+          <li><a href="https://www.npmjs.com/package/vinyl-ftp" target="_blank" rel="help">vinyl-ftp</a></li>
+          <li><a href="https://www.npmjs.com/package/wiredep" target="_blank" rel="help">wiredep</a></li>
+          <li><a href="https://jasmine.github.io/" target="_blank" rel="help">jasmine</a></li>
+          <li><a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help">karma</a></li>
+          <li><a href="https://www.npmjs.com/package/karma-jasmine" target="_blank" rel="help">karma-jasmine</a></li>
+          <li><a href="https://www.npmjs.com/package/karma-phantomjs-launcher" target="_blank" rel="help">karma-phantomjs-launcher</a></li>
+          <li><a href="https://www.npmjs.com/package/karma-spec-reporter" target="_blank" rel="help">karma-spec-reporter</a></li>
+        </ul>
+        <p class="article__paragraph">All of these modules are installed via command <code class="code__line">npm install</code>.</p>
+      </div>
+    </article>
+    <article class="article" id="BowerComponents">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Bower Components<a class="article__anchor anchor" href="#BowerComponents" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">The following components are necessary for a proper functioning template which using technology <a href="https://angularjs.org/" target="_blank" rel="help">Angular v1.x - MVC Framework</a> and <a href="https://material.angularjs.org/latest/" target="_blank" rel="help">Angular Material v1.x - UI Component</a> (<strong>bower.json</strong>):</p>
+        <ul class="article__list article__list-points">
+          <li><a href="https://code.angularjs.org/1.6.1/angular.js" target="_blank" rel="help">angular</a></li>
+          <li><a href="https://ui-router.github.io/ng1/" target="_blank" rel="help">angular-ui-router</a></li>
+          <li><a href="https://code.angularjs.org/1.6.1/angular-animate.min.js" target="_blank" rel="help">angular-animate</a></li>
+          <li><a href="https://code.angularjs.org/1.6.1/angular-aria.js" target="_blank" rel="help">angular-aria</a></li>
+          <li><a href="https://code.angularjs.org/1.6.1/angular-messages.js" target="_blank" rel="help">angular-messages</a></li>
+          <li><a href="https://material.angularjs.org/latest/" target="_blank" rel="help">angular-material</a></li>
+          <li><a href="https://code.angularjs.org/1.6.1/angular-mocks.js" target="_blank" rel="help">angular-mocks</a></li>
+        </ul>
+        <p class="article__paragraph">Additional packages that you can use optionally:</p>
+        <ul class="article__list article__list-points">
+          <li><a href="https://jquery.com/" target="_blank" rel="help">jquery</a></li>
+          <li><a href="https://necolas.github.io/normalize.css/" target="_blank" rel="help">normalize-css</a></li>
+          <li><a href="https://github.com/geoffgraham/animate.scss" target="_blank" rel="help">animatewithsass</a></li>
+        </ul>
+        <p class="article__paragraph">All of these components are installed via command <code class="code__line">bower install</code>.</p>
+        <p class="article__paragraph">Installation additional libraries CSS or JS through <a href="https://bower.io/" target="_blank" rel="help">Bower</a> will automatically add a path to a new component in main file <strong>index.html</strong>. The configuration of this functionality can be found in file <strong>gulpfile.js</strong> module <strong>wiredep</strong>.</p>
+      </div>
+    </article>
+    <article class="article" id="GulpTasks">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Gulp tasks<a class="article__anchor anchor" href="#GulpTasks" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">Tasks are run from the console, being at the same time in project directory by typing keyword <strong>gulp</strong> in combination with <strong>name</strong> and <strong>optional arguments</strong> task to do.</p>
+        <p class="article__paragraph text-medium text-center"><code class="param__keyword">gulp</code> <code class="param__name">name</code> <code class="param__opt-arg">optional arguments</code></p>
+        <p class="article__paragraph">Example command looks like this <code class="code__line">gulp pug --lang pl</code> (nr: <a href="#pug" rel="help">6</a>).</p>
+        <p class="article__paragraph">The following table contains information concerning name, optional arguments, and description for each defined task.</p>
+        <table class="table">
+          <thead class="table__thead">
+            <tr class="table__row">
+              <th class="table__header">Name</th>
+              <th class="table__header">Description</th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            <tr class="table__row">
+              <td class="table__data" id="sassCss"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">sass:css</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses file <strong>main.scss</strong> or <strong>main.sass</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Initiates creation of Source Map based on main file SASS (<a href="https://github.com/floridoo/gulp-sourcemaps#init-options" target="_blank" rel="help">gulp-sourcemaps</a>).</li>
+                  <li>Compiles synchronously SASS code to CSS code with output style <strong>nested</strong> (<a href="https://github.com/sass/node-sass#options" target="_blank" rel="help">gulp-sass</a>).</li>
+                  <li>Adds appropriate methods with prefixes to CSS code. Taking into account support for specific browsers with configuration object (<a href="https://github.com/postcss/autoprefixer#options" target="_blank" rel="help">gulp-autoprefixer</a>).</li>
+                  <li>Saves Source Map to file <strong>main.css.map</strong>.</li>
+                  <li>Saves resulting CSS code to file <strong>main.css</strong>.</li>
+                  <li>Injects new CSS code to overview page (<a href="https://www.browsersync.io/docs/gulp" target="_blank" rel="help">browser-sync</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="sassLint"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">sass:lint</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.scss</strong> and <strong>.sass</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Validates SASS code under selected rules <br class="br__1"/>in configuration object (<a href="https://github.com/sasstools/sass-lint#configuring" target="_blank" rel="help">gulp-sass-lint</a>).</li>
+                  <li>Displays formatted messages <br class="br__1"/>about detected inconsistencies in SASS code (<a href="https://github.com/sasstools/sass-lint/blob/master/docs/options/formatter.md" target="_blank" rel="help">Formatter</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="jsHint"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">js:hint</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.js</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Validates JS code and optimisation possibilities (<a href="http://jshint.com/docs/" target="_blank" rel="help">gulp-jshint</a>).</li>
+                  <li>Displays formatted messages <br class="br__1"/>about detected errors and optimisation possibilities in JS code (<a href="https://github.com/spalger/gulp-jshint#reporters" target="_blank" rel="help">Reporter</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="jsTest"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">js:test</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Runs unit tests in environment <a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help">Karma</a> which is configurable via file <strong>karma.conf.js</strong>. That file allows choosing test framework and much more things about that you can read <a href="https://karma-runner.github.io/1.0/config/configuration-file.html" target="_blank" rel="help">here</a>.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="jadePug"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">jade:pug</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.jade</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Converts file extension <strong>.jade</strong> to <strong>.pug</strong> (<a href="https://github.com/hparra/gulp-rename#usage" target="_blank" rel="help">gulp-rename</a>).</li>
+                  <li>Saves files with a new extension <strong>.pug</strong> <br class="br__1"/>in similar locations to files <strong>.jade</strong>.</li>
+                  <li>Removes not necessary files with extension <strong>.jade</strong> (<a href="https://github.com/sindresorhus/del#usage" target="_blank" rel="help">del</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="pug"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">pug</code><br class="br__2"/><code class="param__opt-arg">--lang pl / en</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Checks if passed additional arguments to process task. Sets the initial value of variable <strong>langValue</strong> to <strong>"pl"</strong> and overwrites it in a case when otherwise noted.</li>
+                  <li>Uses files with extension <strong>.pug</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Prepares a data object to pass it inside stream to gulp-pug (<a href="https://github.com/colynb/gulp-data#gulp-data" target="_blank" rel="help">gulp-data</a>).</li>
+                  <li>Compiles files <strong>.pug</strong> returning completed HTML code <br class="br__1"/>with filled information from a data object (<a href="https://pugjs.org/api/getting-started.html" target="_blank" rel="help">gulp-pug</a>).</li>
+                  <li>Injects tags <strong>Link</strong> and <strong>Script</strong> with paths to source installed libraries CSS or JS. Between these comments in HTML code (<a href="https://github.com/taptapship/wiredep#wiredep--" target="_blank" rel="help">wiredep</a>):
+                    <pre class="code__block"><code class="code__line">&lt;!--bower:css--></code><br/><code class="code__line">// &lt;link href=""></code><br/><code class="code__line">&lt;!--endbower--></code><br/><br/><code class="code__line">&lt;!--bower:js--></code><br/><code class="code__line">// &lt;script src=""></code><br/><code class="code__line">&lt;!--endbower--></code></pre>
+                  </li>
+                  <li>Saves resulting HTML code in <strong>index-en.html</strong> or <strong>index-pl.html</strong> and view files.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="pugLint"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">pug:lint</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.pug</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Validates PUG code under selected rules in configuration object (<a href="https://github.com/pugjs/pug-lint#rules" target="_blank" rel="help">gulp-pug-lint</a>).</li>
+                  <li>Displays formatted messages <br class="br__1"/>about detected inconsistencies in PUG code.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="html"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">html</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.html</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Filters HTML code for inserted comments:
+                    <pre class="code__block"><code class="code__line">&lt;!--build:css main.min.css--></code><br/><code class="code__line">// &lt;link href=""></code><br/><code class="code__line">&lt;!--endbuild--></code><br/><br/><code class="code__line">&lt;!--build:js main.min.js--></code><br/><code class="code__line">// &lt;script src=""></code><br/><code class="code__line">&lt;!--endbuild--></code></pre>Replacing them with individual tags <strong>Link</strong> and <strong>Script</strong> relating to source files <strong>main.min.css</strong> <br class="br__1"/> and <strong>main.min.js</strong> arising as result of combination of all attached libraries, CSS or JS located between that comments (<a href="https://github.com/jonkemp/gulp-useref#usage" target="_blank" rel="help">gulp-useref</a>).
+                  </li>
+                  <li>Checks type of files being processed in the stream. By calling appropriate minify methods for files <br class="br__1"/>with extension <strong>.css</strong> and <strong>.js</strong> (<a href="https://github.com/jakubpawlowicz/clean-css#--------" target="_blank" rel="help">gulp-clean-css</a> / <a href="https://github.com/terinjokes/gulp-uglify#options" target="_blank" rel="help">gulp-uglify</a>).</li>
+                  <li>Saves resulting CSS and JS code to files in production directory.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="htmlHint"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">html:hint</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.html</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Validates HTML code under selected rules in configuration object  (<a href="https://github.com/bezoerb/gulp-htmlhint#api" target="_blank" rel="help">gulp-htmlhint</a>).</li>
+                  <li>Displays formatted messages <br class="br__1"/>about detected inconsistencies in HTML code (<a href="https://github.com/bezoerb/gulp-htmlhint#reporters" target="_blank" rel="help">Reporter</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="htmlMinify"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">html:minify</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Uses files with extension <strong>.html</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Minify HTML code according to settings passed in configuration object (<a href="https://github.com/jonschlinkert/gulp-htmlmin#gulp-htmlmin---" target="_blank" rel="help">gulp-htmlmin</a>).</li>
+                  <li>Saves resulting HTML code in the same source file locations on which task was started (overwriting)</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="server"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">server</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>
+                    <p class="article__paragraph">Runs locally listening server on work directory at address <a href="http://localhost:3000/" target="_blank" rel="help">http://localhost:3000/</a> (visible in console).</p>
+                    <p class="article__paragraph">Providing accessory methods allow you to refresh your browser eg. when you make changes to any file or dynamic injection of CSS styles without reloading the preview page.</p>
+                    <p class="article__paragraph">It also provides application preview from any device connected to local area network at external address (<strong>External</strong> - visible in console).</p>
+                    <p class="article__paragraph">More information about configuration and capabilities of Browser Sync module <a href="https://www.browsersync.io/docs/options" target="_blank" rel="help">here</a>.</p>
+                  </li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="watch"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">watch</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>
+                    <p class="article__paragraph">In consequence to files changed it runs appropriate tasks:<br/><strong>Files</strong><span class="arrow-right"></span><code class="param__name">Tasks</code><br/><strong>.sass</strong> or <strong>.scss</strong><span class="arrow-right"></span><code class="param__name">nr: <a href="#sassLint" rel="help">2</a> and <a href="#sassCss" rel="help">1</a></code><br/><strong>.js</strong><span class="arrow-right"></span><code class="param__name">nr: <a href="#jsHint" rel="help">3</a> and <a href="#server" rel="help">11</a></code><br/><strong>project.data.json</strong> and <strong>.pug</strong><span class="arrow-right"></span><code class="param__name">nr: <a href="#pugLint" rel="help">7</a> and <a href="#pug" rel="help"> 6</a></code><br/><strong>.html</strong><span class="arrow-right"></span><code class="param__name">nr: <a href="#htmlHint" rel="help">9</a> and <a href="#server" rel="help">11</a></code></p>
+                  </li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="clean"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">clean</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Removes production directory with all content. Always runs at the beginning of creating a new application build (<a href="https://github.com/sindresorhus/del#del--" target="_blank" rel="help">del</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="copy"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">copy</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Copies so called Static files from work directory to production directory:
+                    <ul class="article__list article__list-disc">
+                      <li><strong>/files/*</strong></li>
+                      <li><strong>/fonts/*</strong></li>
+                      <li><strong>/img/*</strong></li>
+                      <li><strong>/*.png</strong></li>
+                      <li><strong>/*.xml</strong></li>
+                      <li><strong>/*.ico</strong></li>
+                    </ul>
+                  </li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="images"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">images</code><br class="br__2"/><code class="param__opt-arg">--option advanced</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Checks if passed additional arguments to process task. Sets file extensions for optimisation, optimisation module and arguments for selected module.</li>
+                  <li>Both standard (without additional arguments) and advanced option (with additional arguments) will use images <br class="br__1"/>with extension <strong>.jpg</strong> and <strong>.png</strong>. In standard option is two more types <strong>.svg</strong> and <strong>.gif</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Standard images optimisation is done via module <a href="https://github.com/sindresorhus/gulp-imagemin#api" target="_blank" rel="help">gulp-imagemin</a>.</li>
+                  <li>Advanced images optimisation is done via module <a href="https://github.com/joshbroton/gulp-tinify#gulp-tinify" target="_blank" rel="help">gulp-tinify</a> which uses <a href="https://tinypng.com/developers/reference/nodejs" target="_blank" rel="help">TinyPNG API</a>.</li>
+                  <li>Saves optimised images in the same source image locations on which task was started (overwriting).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="imagesSprite"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">images:sprite</code><br class="br__2"/><code class="param__opt-arg">--name _sprite</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Checks if passed additional arguments to process task. Sets the initial value of variable <strong>spriteCssName</strong> to <strong>"_sprite"</strong> and overwrites it in a case when otherwise noted.</li>
+                  <li>Uses images with extension <strong>.jpg</strong>, <strong>.png</strong> and <strong>.gif</strong>.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Merge all images from directory <code class="code__line">img > sprites_sources</code> in one image composed of many. Returns automatically generated file <strong>.scss</strong> including completed mixins to use, allows displaying any of these images (<a href="https://github.com/Ensighten/spritesmith#spritesmith--" target="_blank" rel="help">gulp-spritesmith</a>).</li>
+                  <li>Checks type of files being processed <br class="br__1"/>in stream (<a href="https://github.com/robrich/gulp-if#gulp-if-api" target="_blank" rel="help">gulp-if</a>). Saves files <br class="br__1"/>with extension <strong>.png</strong> in directory <code class="code__line">img</code> and <strong>.scss</strong> in directory <code class="code__line">sass > components > sprites</code>.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="upload"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">upload</code><br class="br__2"/><code class="param__opt-arg">--upload</code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Checks if all FTP connection variable values are defined in file <strong>project.config.js</strong> and whether passed additional arguments to process task.</li>
+                  <li>Uses all files from production directory.</li>
+                  <li>Reports about encountered errors in a stream without interrupting execution further pipes (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
+                  <li>Uploads files to FTP server, passing location through variable <strong>DESTINATION</strong> (<a href="https://github.com/morris/vinyl-ftp#api" target="_blank" rel="help">vinyl-ftp</a>).</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="build"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">build</code><br class="br__2"/><code class="param__opt-arg">nr: <a href="#pug" rel="help">6</a>, <a href="#images" rel="help">15</a>, <a href="#upload" rel="help">17</a></code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li> 
+                    <p class="article__paragraph">Runs a sequence of gulp tasks in the specified order (<a href="https://github.com/OverZealous/run-sequence#run-sequence" target="_blank" rel="help">run-sequence</a>):<code class="param__name param__name-inline-24">nr: <a href="#clean" rel="help">13</a>, <a href="#sassLint" rel="help">2</a>, <a href="#sassCss" rel="help">1</a>, <a href="#jsHint" rel="help">3</a>, <a href="#pugLint" rel="help">7</a>, <a href="#pug" rel="help">6</a>, <a href="#htmlHint" rel="help">9</a>, <a href="#html" rel="help">8</a>, <a href="#htmlMinify" rel="help">10</a>, <a href="#copy" rel="help">14</a>, <a href="#images" rel="help">15</a>, <a href="#upload" rel="help">17</a></code></p>
+                    <p class="article__paragraph">As a result of completing such a complex task process, you will create a new application build ready for further testing or upload to the production environment.</p>
+                  </li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="buildServer"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">build:server</code><br class="br__2"/><code class="param__opt-arg">nr: <a href="#pug" rel="help">6</a>, <a href="#images" rel="help">15</a>, <a href="#upload" rel="help">17</a></code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li>Invokes gulp task <code class="param__name param__name-inline-24">build</code><a href="#build" rel="help"><sup>18</sup></a> after that, it creates a locally listening server on the newly created production directory.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data" id="default"><span class="table__row-counter"></span>
+                <p class="rotate-content"><code class="param__name">gulp / default</code><br class="br__2"/><code class="param__opt-arg">nr: <a href="#pug" rel="help">6</a></code></p>
+              </td>
+              <td class="table__data">
+                <ol class="article__list">
+                  <li> 
+                    <p class="article__paragraph">Runs a sequence of gulp tasks in the specified order (<a href="https://github.com/OverZealous/run-sequence#run-sequence" target="_blank" rel="help">run-sequence</a>):<code class="param__name param__name-inline-24">nr: <a href="#sassLint" rel="help">2</a>, <a href="#sassCss" rel="help">1</a>, <a href="#jsHint" rel="help">3</a>, <a href="#pugLint" rel="help">7</a>, <a href="#pug" rel="help">6</a>, <a href="#htmlHint" rel="help">9</a>, <a href="#server" rel="help">11</a>, <a href="#watch" rel="help">12</a></code></p>
+                    <p class="article__paragraph">When above sequence is completed. Creates a work environment that provides many useful features. To improve <br class="br__1"/>and accelerate a process of creating a new application.</p>
+                  </li>
+                </ol>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="article__paragraph">More info and source code to review in file <strong>gulpfile.js</strong>.</p>
+      </div>
+    </article>
+    <article class="article" id="Testing">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Testing<a class="article__anchor anchor" href="#Testing" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">Runs with the task <code class="code__line">gulp js:test</code>. To support unit testing, listening changes in source files and reporting errors has been prepared environment <a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help">Karma</a>. Standard configuration uses the framework <a href="https://jasmine.github.io/" target="_blank" rel="help">Jasmine</a>, simulator <a href="http://phantomjs.org/" target="_blank" rel="help">PhantomJS</a> and reporter <a href="https://www.npmjs.com/package/karma-spec-reporter" target="_blank" rel="help">Spec</a>. Files configuration and unit tests you can find <code class="code__line">Project directory > Test > Karma.conf.js / Spec</code>.</p>
+      </div>
+    </article>
+    <article class="article" id="Changelog">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">Changelog<a class="article__anchor anchor" href="#Changelog" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph">Recent changes can be viewed on <a href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help">Github</a> on the <a href="https://github.com/mateuszarchicinski/Angular1.x-Template/releases" target="_blank">Releases Page</a>.</p>
+      </div>
+    </article>
+    <article class="article" id="License">
+      <header class="article__header">
+        <h3 class="article__title tertiary-heading">License<a class="article__anchor anchor" href="#License" rel="help"></a></h3>
+      </header>
+      <div class="article__body">
+        <p class="article__paragraph"><a href="https://github.com/mateuszarchicinski/Angular1.x-Template/blob/master/LICENSE" target="_blank" rel="license">MIT License</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

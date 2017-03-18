@@ -1,0 +1,145 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$attachment-black-name: 'attachment_black';
+$attachment-black-x: 0px;
+$attachment-black-y: 0px;
+$attachment-black-offset-x: 0px;
+$attachment-black-offset-y: 0px;
+$attachment-black-width: 24px;
+$attachment-black-height: 24px;
+$attachment-black-total-width: 72px;
+$attachment-black-total-height: 48px;
+$attachment-black-image: '../images/sprite.png';
+$attachment-black: (0px, 0px, 0px, 0px, 24px, 24px, 72px, 48px, '../images/sprite.png', 'attachment_black', );
+$code-black-name: 'code_black';
+$code-black-x: 24px;
+$code-black-y: 0px;
+$code-black-offset-x: -24px;
+$code-black-offset-y: 0px;
+$code-black-width: 24px;
+$code-black-height: 24px;
+$code-black-total-width: 72px;
+$code-black-total-height: 48px;
+$code-black-image: '../images/sprite.png';
+$code-black: (24px, 0px, -24px, 0px, 24px, 24px, 72px, 48px, '../images/sprite.png', 'code_black', );
+$folder-black-name: 'folder_black';
+$folder-black-x: 0px;
+$folder-black-y: 24px;
+$folder-black-offset-x: 0px;
+$folder-black-offset-y: -24px;
+$folder-black-width: 24px;
+$folder-black-height: 24px;
+$folder-black-total-width: 72px;
+$folder-black-total-height: 48px;
+$folder-black-image: '../images/sprite.png';
+$folder-black: (0px, 24px, 0px, -24px, 24px, 24px, 72px, 48px, '../images/sprite.png', 'folder_black', );
+$folder-open-black-name: 'folder_open_black';
+$folder-open-black-x: 24px;
+$folder-open-black-y: 24px;
+$folder-open-black-offset-x: -24px;
+$folder-open-black-offset-y: -24px;
+$folder-open-black-width: 24px;
+$folder-open-black-height: 24px;
+$folder-open-black-total-width: 72px;
+$folder-open-black-total-height: 48px;
+$folder-open-black-image: '../images/sprite.png';
+$folder-open-black: (24px, 24px, -24px, -24px, 24px, 24px, 72px, 48px, '../images/sprite.png', 'folder_open_black', );
+$folder-special-black-name: 'folder_special_black';
+$folder-special-black-x: 48px;
+$folder-special-black-y: 0px;
+$folder-special-black-offset-x: -48px;
+$folder-special-black-offset-y: 0px;
+$folder-special-black-width: 24px;
+$folder-special-black-height: 24px;
+$folder-special-black-total-width: 72px;
+$folder-special-black-total-height: 48px;
+$folder-special-black-image: '../images/sprite.png';
+$folder-special-black: (48px, 0px, -48px, 0px, 24px, 24px, 72px, 48px, '../images/sprite.png', 'folder_special_black', );
+$image-black-name: 'image_black';
+$image-black-x: 48px;
+$image-black-y: 24px;
+$image-black-offset-x: -48px;
+$image-black-offset-y: -24px;
+$image-black-width: 24px;
+$image-black-height: 24px;
+$image-black-total-width: 72px;
+$image-black-total-height: 48px;
+$image-black-image: '../images/sprite.png';
+$image-black: (48px, 24px, -48px, -24px, 24px, 24px, 72px, 48px, '../images/sprite.png', 'image_black', );
+$spritesheet-width: 72px;
+$spritesheet-height: 48px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($attachment-black, $code-black, $folder-black, $folder-open-black, $folder-special-black, $image-black, );
+$spritesheet: (72px, 48px, '../images/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

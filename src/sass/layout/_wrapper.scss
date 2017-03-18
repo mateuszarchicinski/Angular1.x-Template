@@ -1,0 +1,44 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* MAIN WRAPPR *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// [ui-view]
+$ui-view__transition: all 0.25s ease !default;
+// .ng-enter
+$ui-view__ng-enter__opacity: 0 !default;
+$ui-view__ng-enter__transform: scale3d(.95, .95, .95) !default;
+// .ng-enter-active
+$ui-view__ng-enter-active__opacity: 1 !default;
+$ui-view__ng-enter-active__transform: scale3d(1, 1, 1) !default;
+// .ng-leave
+$ui-view__ng-leave-active__transform: translate3d(0, 0, 0) !default;
+// .ng-leave-active
+$ui-view__ng-leave-active__opacity: 0 !default;
+
+
+.main-wrapper {
+    &__container {
+        position: relative;
+    }
+    [ui-view] {
+        &.ng-enter,
+        &.ng-leave {
+            transition: $ui-view__transition;
+        }
+        &.ng-enter {
+            opacity: $ui-view__ng-enter__opacity;
+            transform: $ui-view__ng-enter__transform;
+        }
+        &.ng-enter-active {
+            opacity: $ui-view__ng-enter-active__opacity;
+            transform: $ui-view__ng-enter-active__transform;
+        }
+        &.ng-leave {
+            transform: $ui-view__ng-leave-active__transform;
+        }
+        &.ng-leave-active {
+            opacity: $ui-view__ng-leave-active__opacity;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+//-
+    SassLint
+
+ol.article__list
+    li #{data.articles.gulpTasks.table.rows.sassLint[0][0]} 
+        strong .scss
+        |  #{data.articles.gulpTasks.table.rows.sassLint[0][1]} 
+        strong .sass
+        | .
+    include modules/_gulpPlumber
+    li #{data.articles.gulpTasks.table.rows.sassLint[1][0]} 
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.sassLint[1][1]}
+        a(href="https://github.com/sasstools/sass-lint#configuring" target="_blank" rel="help") gulp-sass-lint
+        | ).
+    li #{data.articles.gulpTasks.table.rows.sassLint[2][0]} 
+        br.br__1
+        | #{data.articles.gulpTasks.table.rows.sassLint[2][1]}
+        a(href="https://github.com/sasstools/sass-lint/blob/master/docs/options/formatter.md" target="_blank" rel="help") Formatter
+        | ).

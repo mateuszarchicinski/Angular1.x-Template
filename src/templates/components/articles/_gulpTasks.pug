@@ -1,0 +1,203 @@
+//-
+    Gulp Tasks
+
+article(id="GulpTasks" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.gulpTasks.headline}
+            a(href="#GulpTasks" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.gulpTasks.paragraph[0][0]} 
+            strong gulp
+            |  #{data.articles.gulpTasks.paragraph[0][1]} 
+            strong #{data.articles.gulpTasks.paragraph[0][2]}
+            |  #{data.articles.gulpTasks.paragraph[0][3]} 
+            strong #{data.articles.gulpTasks.paragraph[0][4]}
+            |  #{data.articles.gulpTasks.paragraph[0][5]}
+        p.article__paragraph.text-medium.text-center
+            code.param__keyword gulp
+            |  
+            code.param__name #{data.articles.gulpTasks.paragraph[1][0]}
+            |  
+            code.param__opt-arg #{data.articles.gulpTasks.paragraph[1][1]}
+        p.article__paragraph #{data.articles.gulpTasks.paragraph[2][0]} 
+            code.code__line gulp pug --lang pl
+            |  #{data.articles.gulpTasks.paragraph[2][1]} 
+            a(href="#pug" rel="help") 6
+            | ).
+        p.article__paragraph #{data.articles.gulpTasks.paragraph[3][0]}
+        table.table
+            thead.table__thead
+                tr.table__row
+                    th.table__header
+                        | #{data.articles.gulpTasks.table.headers[0]}
+                    th.table__header
+                        | #{data.articles.gulpTasks.table.headers[1]}
+            tbody.table__body
+                tr.table__row
+                    td#sassCss.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name sass:css
+                    td.table__data
+                        include gulp_tasks/_sassCss.pug
+                tr.table__row
+                    td#sassLint.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name sass:lint
+                    td.table__data
+                        include gulp_tasks/_sassLint.pug
+                tr.table__row
+                    td#jsHint.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name js:hint
+                    td.table__data
+                        include gulp_tasks/_jsHint.pug
+                tr.table__row
+                    td#jsTest.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name js:test
+                    td.table__data
+                        include gulp_tasks/_jsTest.pug
+                tr.table__row
+                    td#jadePug.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name jade:pug
+                    td.table__data
+                        include gulp_tasks/_jadePug.pug
+                tr.table__row
+                    td#pug.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name pug
+                            br.br__2
+                            code.param__opt-arg --lang pl / en
+                    td.table__data
+                        include gulp_tasks/_pug.pug
+                tr.table__row
+                    td#pugLint.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name pug:lint
+                    td.table__data
+                        include gulp_tasks/_pugLint.pug
+                tr.table__row
+                    td#html.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name html
+                    td.table__data
+                        include gulp_tasks/_html.pug
+                tr.table__row
+                    td#htmlHint.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name html:hint
+                    td.table__data
+                        include gulp_tasks/_htmlHint.pug
+                tr.table__row
+                    td#htmlMinify.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name html:minify
+                    td.table__data
+                        include gulp_tasks/_htmlMinify.pug
+                tr.table__row
+                    td#server.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name server
+                    td.table__data
+                        include gulp_tasks/_server.pug
+                tr.table__row
+                    td#watch.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name watch
+                    td.table__data
+                        include gulp_tasks/_watch.pug
+                tr.table__row
+                    td#clean.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name clean
+                    td.table__data
+                        include gulp_tasks/_clean.pug
+                tr.table__row
+                    td#copy.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name copy
+                    td.table__data
+                        include gulp_tasks/_copy.pug
+                tr.table__row
+                    td#images.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name images
+                            br.br__2
+                            code.param__opt-arg --option advanced
+                    td.table__data
+                        include gulp_tasks/_images.pug
+                tr.table__row
+                    td#imagesSprite.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name images:sprite
+                            br.br__2
+                            code.param__opt-arg --name _sprite
+                    td.table__data
+                        include gulp_tasks/_imagesSprite.pug
+                tr.table__row
+                    td#upload.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name upload
+                            br.br__2
+                            code.param__opt-arg --upload
+                    td.table__data
+                        include gulp_tasks/_upload.pug
+                tr.table__row
+                    td#build.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name build
+                            br.br__2
+                            code.param__opt-arg nr: 
+                                a(href="#pug" rel="help") 6
+                                | , 
+                                a(href="#images" rel="help") 15
+                                | , 
+                                a(href="#upload" rel="help") 17
+                    td.table__data
+                        include gulp_tasks/_build.pug
+                tr.table__row
+                    td#buildServer.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name build:server
+                            br.br__2
+                            code.param__opt-arg nr: 
+                                a(href="#pug" rel="help") 6
+                                | , 
+                                a(href="#images" rel="help") 15
+                                | , 
+                                a(href="#upload" rel="help") 17
+                    td.table__data
+                        include gulp_tasks/_buildServer.pug
+                tr.table__row
+                    td#default.table__data
+                        span.table__row-counter
+                        p.rotate-content
+                            code.param__name gulp / default
+                            br.br__2
+                            code.param__opt-arg nr: 
+                                a(href="#pug" rel="help") 6
+                    td.table__data
+                        include gulp_tasks/_default.pug
+        p.article__paragraph #{data.articles.gulpTasks.paragraph[4][0]} 
+            strong gulpfile.js
+            | .

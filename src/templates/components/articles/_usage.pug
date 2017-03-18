@@ -1,0 +1,47 @@
+//-
+    Usage
+
+article(id="Usage" class="article")
+    header.article__header
+        h3.article__title.tertiary-heading #{data.articles.usage.headline}
+            a(href="#Usage" rel="help" class="article__anchor anchor")
+    .article__body
+        p.article__paragraph #{data.articles.usage.paragraph[0][0]} 
+            strong #{data.articles.usage.paragraph[0][1]}
+            |  #{data.articles.usage.paragraph[0][2]} 
+            a(href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help") Github
+            | #{data.articles.usage.paragraph[0][3]} 
+            a(href="https://git-scm.com/" target="_blank" rel="help") Git
+            | .
+        ol.article__list.article__list-15
+            li
+                | #{data.articles.usage.paragraph[1][0]}
+                pre.code__block
+                    code.code__line mkdir #{data.articles.usage.paragraph[1][1]} && cd #{data.articles.usage.paragraph[1][1]}
+                | #{data.articles.usage.paragraph[2][0]} 
+                code.code__line git init
+                |  #{data.articles.usage.paragraph[2][1]}
+                pre.code__block
+                    code.code__line git pull 
+                        a(class="part-hidden invert" href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help") #{data.articles.usage.paragraph[2][2]}
+                        span.part-visible.invert https://github.com/mateuszarchicinski/Angular1.x-Template
+            li
+                | #{data.articles.usage.paragraph[3][0]}
+                pre.code__block
+                    code.code__line git clone 
+                        a(class="part-hidden invert" href="https://github.com/mateuszarchicinski/Angular1.x-Template" target="_blank" rel="help") #{data.articles.usage.paragraph[2][2]}
+                        span.part-visible.invert https://github.com/mateuszarchicinski/Angular1.x-Template
+            li
+                | #{data.articles.usage.paragraph[4][0]} 
+                a(href="https://github.com/mateuszarchicinski/Angular1.x-Template/releases" target="_blank") #{data.articles.usage.paragraph[4][1]}
+                | .
+        p.article__paragraph #{data.articles.usage.paragraph[5][0]} 
+            code.code__line npm install
+            |  #{data.articles.usage.paragraph[5][1]} 
+            code.code__line bower install
+            | .
+        p.article__paragraph #{data.articles.usage.paragraph[6][0]} 
+            strong gulpfile.js
+            | #{data.articles.usage.paragraph[6][1]} 
+            a(href="#GulpTasks" rel="help") #{data.articles.usage.paragraph[6][2]}
+            | .
