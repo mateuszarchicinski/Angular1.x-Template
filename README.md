@@ -2,4 +2,4 @@
 
 > The template provides configured and automated work environment with the possibility of further development functionality. It uses technologies such as <a href="https://nodejs.org/en/" target="_blank" rel="help">NodeJS</a>, <a href="https://www.npmjs.com/" target="_blank" rel="help">NPM</a>, <a href="https://bower.io/" target="_blank" rel="help">Bower</a>, <a href="http://gulpjs.com/" target="_blank" rel="help">GulpJS</a> and <a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help">Karma</a>. The basic configuration is prepared for the development of Web application client-side in technology <a href="https://angularjs.org/" target="_blank" rel="help">Angular v1.x - MVC Framework</a>.
 
-Full documentation and information is available on project website <a href="https://www.angular1-x.mateusz-archicinski.pl/en/readme" target="_blank" rel="help">here</a>.
+Full documentation and information are available on project website <a href="https://www.angular1-x.mateusz-archicinski.pl/en/readme" target="_blank" rel="help">here</a>.
