@@ -29,17 +29,22 @@ var PROJECT_CONFIG = require('./project.config');
 
 
 // USEFUL FUNCTIONS
-// To display a console log message in three types: info, warning and error
+// To display a console log message in five types: normal, success, info, warning and error
 function alertHandler (args) {
 
-    var types = {
+    args = args || {};
+    
+    let types = {
+        normal: 'white',
+        success: 'green',
         info: 'blue',
         warning: 'yellow',
         error: 'red'
     },
-        title = args.title ? args.title : args.type,
-        message = args.message,
-        color = types[args.type],
+        type = args.type || 'info',
+        title = args.title || type,
+        message = args.message || 'Remember to specify necessary property type & message in a configuration object.',
+        color = types[type],
         messageTemplate = `
 **~~~~~~~~* ${title.toUpperCase()} LOG - OPEN *~~~~~~~~**
 ${message}
