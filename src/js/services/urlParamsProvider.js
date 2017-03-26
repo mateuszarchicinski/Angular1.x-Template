@@ -25,7 +25,7 @@
                     return self.languages.indexOf(langValue) === -1 ? self.languages[0] : langValue;
                 },
                 rightPath: function () {
-                    return location.pathname.substring(langValue.length + 1) + location.search;
+                    return location.pathname.substring(this.currentLanguage().length + 2) + location.search;
                 }
             };
         };

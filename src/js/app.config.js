@@ -37,10 +37,9 @@
 
     }])
     .constant('APP_CONFIG', {
-        host: 'http://localhost:3000/', // Remember to change variable in different environment
-        languages: ['pl', 'en'] // First element is default variable of language
+        languages: ['pl', 'en'] // First element is a default value of language
     })
-    .run(['$rootScope', '$state', function ($rootScope, $state) {
+    .run(['urlParams', '$rootScope', '$state', function (urlParams, $rootScope, $state) {
         
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
             if (toState.redirectTo) {
