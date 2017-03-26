@@ -5,27 +5,26 @@
 
 
 // NODE MODULES
-var gulp = require('gulp'), // https://gulp.readme.io/docs/getting-started
-    $ = require('gulp-load-plugins')({ // https://github.com/jackfranklin/gulp-load-plugins#options
-        lazy: true
-    }),
-    jshintStylish = require('jshint-stylish'),
-    htmlhintStylish = require('htmlhint-stylish'),
-    wiredep = require('wiredep').stream,
-    browserSync = require('browser-sync'),
-    del = require('del'),
-    imageminGifsicle = require('imagemin-gifsicle'),
-    imageminJpegtran = require('imagemin-jpegtran'),
-    imageminOptipng = require('imagemin-optipng'),
-    imageminSvgo = require('imagemin-svgo'),
-    ftp = require('vinyl-ftp'),
-    runSequence = require('run-sequence'),
-    fs = require('fs'),
-    karma = require('karma').Server;
+const gulp = require('gulp'), // https://gulp.readme.io/docs/getting-started
+      $ = require('gulp-load-plugins')( {lazy: true} ), // https://github.com/jackfranklin/gulp-load-plugins#options
+      jshintStylish = require('jshint-stylish'),
+      htmlhintStylish = require('htmlhint-stylish'),
+      wiredep = require('wiredep').stream,
+      browserSync = require('browser-sync'),
+      express = require('express'),
+      del = require('del'),
+      imageminGifsicle = require('imagemin-gifsicle'),
+      imageminJpegtran = require('imagemin-jpegtran'),
+      imageminOptipng = require('imagemin-optipng'),
+      imageminSvgo = require('imagemin-svgo'),
+      ftp = require('vinyl-ftp'),
+      runSequence = require('run-sequence'),
+      fs = require('fs'),
+      karma = require('karma').Server;
 
 
 // PROJECT CONFIG
-var PROJECT_CONFIG = require('./project.config');
+const PROJECT_CONFIG = require('./project.config');
 
 
 // USEFUL FUNCTIONS
@@ -46,7 +45,7 @@ function alertHandler (args) {
         message = args.message || 'Remember to specify necessary property type & message in a configuration object.',
         color = types[type],
         messageTemplate = `
-**~~~~~~~~* ${title.toUpperCase()} LOG - OPEN *~~~~~~~~**
+**~~~~~~~~* ${title.toUpperCase()} LOG - OPEN *~~~~~~~~~**
 ${message}
 **~~~~~~~~* ${title.toUpperCase()} LOG - CLOSE *~~~~~~~~**`;
     
@@ -65,14 +64,10 @@ function getOption (option) {
 };
 
 
-// To create the BROWSER SYNC server with middleware which redirects requests to main page
+// To create the BROWSER SYNC server with EXPRESS as a middleware which redirects requests to main page
 function createServer (baseDir) {
-
-    var value = getOption('--lang').value,
-        langValue = !value ? PROJECT_CONFIG.LANGUAGES[0] : value,
-        indexFile = 'index-' + langValue + '.html';
     
-    if (value && PROJECT_CONFIG.LANGUAGES.indexOf(value) === -1) {
+    if (PROJECT_CONFIG.LANGUAGES.length === 0) {
         
         return alertHandler({
             type: 'error',
@@ -82,23 +77,73 @@ Remember to set up your LANGUAGES in ${PROJECT_CONFIG.CONFIG_FILE} file.`
         
     }
     
-    browserSync.init({ // https://www.browsersync.io/docs/options
-        server: {
-            baseDir: baseDir,
-            index: indexFile
-        }
-    }, function (err, bs) {
+    
+    // Init EXPRESS APP ---> https://expressjs.com/en/4x/api.html
+    const app = express();
+    
+    
+    // Enables all Cross-Origin Resource Sharing (CORS) requests, more info about CORS ---> https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
         
-        bs.addMiddleware("*", function (req, res) {
-            res.writeHead(301, {
-                'location': '/'
-            });
-            
-            res.end("Redirecting!");
+        next();
+    });
+    
+    
+    // Serves static files from the directory, which is defined in a variable baseDir
+    app.use('/', express.static(`${__dirname}/${baseDir}`));
+    
+    
+    // Handles all possible routes to send the appropriate HTML file
+    app.get(['/', '/:lang', '/:lang/*', '*'], (req, res, next) => {
+        
+        let langValue = PROJECT_CONFIG.LANGUAGES.includes(req.params.lang) ? req.params.lang : PROJECT_CONFIG.LANGUAGES[0];
+        
+        
+        if (/^\/{3}.*$/.test(req.url)) {
+            return res.redirect(301, '/');
+        }
+        
+        return res.status(200).type('html').sendFile(`${__dirname}/${baseDir}/index-${langValue}.html`, (err) => {
+            if (err) {
+                next(err);
+            }
         });
         
     });
-
+    
+    
+    // Handles HTTP errors
+    app.use((err, req, res, next) => {
+        
+        alertHandler({
+            type: 'error',
+            message: err
+        });
+        
+        alertHandler({
+            type: 'error',
+            message: err.stack
+        });
+        
+        
+        let statusCode = err.statusCode || 500;
+        
+        
+        return res.status(statusCode).type('json').send( {message: err.message, statusCode: statusCode} );
+        
+    });
+    
+    
+    // Init BROWSER SYNC ---> https://www.browsersync.io/docs
+    browserSync.init({
+        proxy: `${PROJECT_CONFIG.BROWSER_SYNC.TARGET}:${PROJECT_CONFIG.BROWSER_SYNC.PORT}`,
+        port: PROJECT_CONFIG.BROWSER_SYNC.PORT,
+        middleware: [app],
+        logPrefix: PROJECT_CONFIG.BROWSER_SYNC.LOG_PREFIX,
+        logConnections: PROJECT_CONFIG.BROWSER_SYNC.LOG_CONNECTIONS
+    });
+    
 };
 
 
@@ -203,22 +248,7 @@ gulp.task('pug', function () {
 
     $.util.log($.util.colors.green('PUG TASK RUNNING...'));
     
-    var value = getOption('--lang').value,
-        langValue = !value ? PROJECT_CONFIG.LANGUAGES[0] : value,
-        langPath = getOption('build') || getOption('build:server') ? '' : langValue;
-    
-    if (!value) {
-        
-        alertHandler({
-            type: 'info',
-            message: `Default data object configuration [PL] passed to puge task.
-To change that, add command arguments to this task ---> gulp [TASK NAME = puge / default / build / build:server] --lang [pl / en].
-Before that, do not forget a specify translation in ${PROJECT_CONFIG.DATA_FILE} file.`
-        });
-        
-    }
-    
-    if (value && PROJECT_CONFIG.LANGUAGES.indexOf(value) === -1) {
+    if (PROJECT_CONFIG.LANGUAGES.length === 0) {
         
         return alertHandler({
             type: 'error',
@@ -229,24 +259,24 @@ Remember to set up your LANGUAGES in ${PROJECT_CONFIG.CONFIG_FILE} file.`
     }
     
     return gulp.src([
-        PROJECT_CONFIG.DIRECTORY.WORK_DIR + '/templates/*' + langPath + '.pug',
-        PROJECT_CONFIG.DIRECTORY.WORK_DIR + '/templates/views/' + langPath + '**/*.pug'
+        PROJECT_CONFIG.DIRECTORY.WORK_DIR + '/templates/*.pug',
+        PROJECT_CONFIG.DIRECTORY.WORK_DIR + '/templates/views/**/*.pug'
     ], {
         base: PROJECT_CONFIG.DIRECTORY.WORK_DIR + '/templates'
     })
     .pipe($.plumber())
     .pipe($.data(function (file) { // https://github.com/colynb/gulp-data#gulp-data
-        var filePathArray = file.path.split('\\'),
+        let filePathArray = file.path.split('\\'),
             index = filePathArray.indexOf('views') + 1,
             lastIndex = filePathArray[filePathArray.length - 1],
             value = index ? filePathArray[index] : lastIndex.substring(lastIndex.length - 6, lastIndex.length - 4),
-            lang = PROJECT_CONFIG.LANGUAGES.indexOf(value) === -1 ? langValue : value;
+            lang = PROJECT_CONFIG.LANGUAGES.includes(value) ? value : PROJECT_CONFIG.LANGUAGES[0];
         
         return {
-            host: PROJECT_CONFIG.HOST,
             appName: PROJECT_CONFIG.APP_NAME,
             languages: PROJECT_CONFIG.LANGUAGES,
             baseUrl: PROJECT_CONFIG.BASE_URL,
+            host: PROJECT_CONFIG.HOST,
             googleAnalytics: {
                 trackingId: PROJECT_CONFIG.GOOGLE_ANALYTICS.TRACKING_ID
             },

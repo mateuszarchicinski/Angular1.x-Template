@@ -4,7 +4,7 @@
     <!--Define Unicode-->
     <meta charset="utf-8">
     <!--Define Base URL Address-->
-    <base href="http://localhost:3000/">
+    <base href="/">
     <!--Define a Compatibility with IE-->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!--Define Flexible Viewport for Mobile Devices-->
@@ -16,11 +16,11 @@
     <meta name="description" content="Szablon aplikacji webowej stworzony na potrzeby przygotowania zautomatyzowanego i skonfigurowanego środowiska developerskiego do pracy z Angularem v1.x umożliwiającego szybkie rozpoczęcie projektu.">
     <meta name="keywords" content="szablon template aplikacja application web automatyzacja automation skonfigurowana configured środowisko environment deweloper developer front front-end projekt project angular material ng app google node nodejs npm bower gulp gulpjs karma jasmine">
     <meta name="author" content="Mateusz Archiciński">
-    <meta property="og:url" content="http://localhost:3000/">
+    <meta property="og:url" content="">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kickstart Projekt - Angular v1.x Szablon">
     <meta property="og:description" content="Szablon aplikacji webowej stworzony na potrzeby przygotowania zautomatyzowanego i skonfigurowanego środowiska developerskiego do pracy z Angularem v1.x umożliwiającego szybkie rozpoczęcie projektu.">
-    <meta property="og:image" content="http://localhost:3000/tile-1200x630px.png">
+    <meta property="og:image" content="tile-1200x630px.png">
     <meta name="robots" content="index, follow, noodp, noydir">
     <!--Icon Sources-->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -65,10 +65,10 @@
     <!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p><![endif]-->
     <main>
       <!--Language Settings-->
-      <div class="language-settings" ng-controller="translateController">
+      <div class="language-settings" ng-controller="translateController as TC">
         <ul class="language-settings__list">
-          <li><a class="language-settings__link" ng-click="translate('pl')" ng-class="{'language-settings__link-active': language === 'pl'}" href="" rel="help">pl</a></li>
-          <li><a class="language-settings__link" ng-click="translate('en')" ng-class="{'language-settings__link-active': language === 'en'}" href="" rel="help">en</a></li>
+          <li><a class="language-settings__link" ng-click="TC.translate('pl')" ng-class="{'language-settings__link-active': TC.language === 'pl'}" href="" rel="help">pl</a></li>
+          <li><a class="language-settings__link" ng-click="TC.translate('en')" ng-class="{'language-settings__link-active': TC.language === 'en'}" href="" rel="help">en</a></li>
         </ul>
       </div>
       <!--Main Header-->
