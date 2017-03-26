@@ -12,7 +12,7 @@
 
 
 // Font face
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot svg ttf woff woff2) {
+@mixin font-face($name, $path, $style: null, $weight: null, $exts: eot svg ttf woff woff2) {
     $src: null;
     
     $extmods: (

@@ -3,6 +3,23 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+/* Fonts: Roboto */
+
+
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Thin", normal, 100, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-ThinItalic", italic, 100, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Light", normal, 300, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-LightItalic", italic, 300, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Regular", normal, 400, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Italic", italic, 400, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Medium", normal, 500, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-MediumItalic", italic, 500, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Bold", normal, 700, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-BoldItalic", italic, 700, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-Black", normal, 900, ttf);
+@include font-face(Roboto, "../fonts/Roboto/Roboto-BlackItalic", italic, 900, ttf);
+
+
 /* Headings */
 // .primary-heading
 $primary-heading__font-size: 2em !default;

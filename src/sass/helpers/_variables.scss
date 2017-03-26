@@ -56,7 +56,7 @@ $base__line-height: $line-height__1-2;
 $base__font-family: $font__roboto, $font__helvetica-neue, $font__sans-serif;
 $base__font-size: $font-size__1;
 $base__font-weight: $font-weight__normal;
-/* Headings */
+// Headings //
 // .primary-heading
 $primary-heading__font-size: $base__font-size * 2;
 $primary-heading__font-weight: $font-weight__lighter;
@@ -75,7 +75,7 @@ $headings__font-weight: $base__font-weight;
 $headings__padding-bottom: #{(4 / 16)}em;
 $headings__border-bottom: 1px solid $primary-color;
 $quaternary-heading__font-size: $tertiary-heading__font-size - 0.1;
-/* Text */
+// Text //
 //__normal
 $text-normal__font-size: $base__font-size;
 //__small
