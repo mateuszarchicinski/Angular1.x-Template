@@ -34,12 +34,13 @@
       <div class="article__body">
         <p class="article__paragraph">Globalne ustawienia są dostępne w pliku <strong>project.config.js</strong>, który umożliwia zmianę: </p>
         <ul class="article__list article__list-points">
-          <li>hosta (wykorzystywanego przy <a href="http://www.webopedia.com/TERM/S/SEO.html" target="_blank" rel="help">SEO</a>),</li>
           <li>nazwy aplikacji,</li>
           <li>obsługiwanych języków,</li>
           <li>wartości atrybutu href w tagu base,</li>
+          <li>hosta (wykorzystywanego przy <a href="http://www.webopedia.com/TERM/S/SEO.html" target="_blank" rel="help">SEO</a>),</li>
           <li>nazwy pliku konfiguracyjnego i danych,</li>
           <li>katalogów pracy i produkcji (wymagana również manualna zmiana w pliku <strong>.bowerrc</strong>),</li>
+          <li>ustawień modułu <a href="https://browsersync.io/docs/options" target="_blank" rel="help">Browser Sync</a>,</li>
           <li>dostępów FTP,</li>
           <li>kluczy do zewnętrznych API,</li>
           <li>identyfikatora śledzenia <a href="https://www.google.com/analytics/" target="_blank" rel="help">Google Analytics</a>,</li>
@@ -68,8 +69,16 @@
                       <li class="branch__leaf-bottom"><i class="branch__icon file__css"></i>main.css</li>
                     </ul>
                   </li>
-                  <li><i class="branch__icon directory__open"></i>files</li>
-                  <li class="branch__leaf"><i class="branch__icon directory__open"></i>fonts</li>
+                  <li><i class="branch__icon directory__open"></i>files
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>pdfs</li>
+                    </ul>
+                  </li>
+                  <li class="branch__leaf"><i class="branch__icon directory__open"></i>fonts
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>Roboto</li>
+                    </ul>
+                  </li>
                   <li class="branch__leaf-bottom"><i class="branch__icon directory__open"></i>images
                     <ul class="branch">
                       <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>sprites_sources</li>
@@ -124,7 +133,13 @@
               </li>
               <li><i class="branch__icon directory__open"></i>test
                 <ul class="branch">
-                  <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>spec</li>
+                  <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>spec
+                    <ul class="branch">
+                      <li class="branch__leaf-top"><i class="branch__icon directory__open"></i>controllers</li>
+                      <li class="branch__leaf"><i class="branch__icon directory__open"></i>directives</li>
+                      <li class="branch__leaf-bottom"><i class="branch__icon directory__open"></i>services</li>
+                    </ul>
+                  </li>
                   <li class="branch__leaf-bottom"><i class="branch__icon file__js"></i>karma.conf.js</li>
                 </ul>
               </li>
@@ -150,6 +165,7 @@
           <li><a href="https://bower.io/" target="_blank" rel="help">bower</a></li>
           <li><a href="https://browsersync.io/" target="_blank" rel="help">browser-sync</a></li>
           <li><a href="https://www.npmjs.com/package/del" target="_blank" rel="help">del</a></li>
+          <li><a href="https://expressjs.com/" target="_blank" rel="help">express</a></li>
           <li><a href="http://gulpjs.com/" target="_blank" rel="help">gulp</a></li>
           <li><a href="https://www.npmjs.com/package/gulp-autoprefixer" target="_blank" rel="help">gulp-autoprefixer</a></li>
           <li><a href="https://www.npmjs.com/package/gulp-clean-css" target="_blank" rel="help">gulp-clean-css</a></li>
@@ -178,15 +194,15 @@
           <li><a href="https://www.npmjs.com/package/imagemin-jpegtran" target="_blank" rel="help">imagemin-jpegtran</a></li>
           <li><a href="https://www.npmjs.com/package/imagemin-optipng" target="_blank" rel="help">imagemin-optipng</a></li>
           <li><a href="https://www.npmjs.com/package/imagemin-svgo" target="_blank" rel="help">imagemin-svgo</a></li>
-          <li><a href="https://www.npmjs.com/package/jshint-stylish" target="_blank" rel="help">jshint-stylish</a></li>
-          <li><a href="https://www.npmjs.com/package/run-sequence" target="_blank" rel="help">run-sequence</a></li>
-          <li><a href="https://www.npmjs.com/package/vinyl-ftp" target="_blank" rel="help">vinyl-ftp</a></li>
-          <li><a href="https://www.npmjs.com/package/wiredep" target="_blank" rel="help">wiredep</a></li>
           <li><a href="https://jasmine.github.io/" target="_blank" rel="help">jasmine</a></li>
+          <li><a href="https://www.npmjs.com/package/jshint-stylish" target="_blank" rel="help">jshint-stylish</a></li>
           <li><a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="help">karma</a></li>
           <li><a href="https://www.npmjs.com/package/karma-jasmine" target="_blank" rel="help">karma-jasmine</a></li>
           <li><a href="https://www.npmjs.com/package/karma-phantomjs-launcher" target="_blank" rel="help">karma-phantomjs-launcher</a></li>
           <li><a href="https://www.npmjs.com/package/karma-spec-reporter" target="_blank" rel="help">karma-spec-reporter</a></li>
+          <li><a href="https://www.npmjs.com/package/run-sequence" target="_blank" rel="help">run-sequence</a></li>
+          <li><a href="https://www.npmjs.com/package/vinyl-ftp" target="_blank" rel="help">vinyl-ftp</a></li>
+          <li><a href="https://www.npmjs.com/package/wiredep" target="_blank" rel="help">wiredep</a></li>
         </ul>
         <p class="article__paragraph">Wszystkie powyższe moduły instalujemy komendą <code class="code__line">npm install</code>.</p>
       </div>
@@ -306,11 +322,10 @@
               </td>
               <td class="table__data">
                 <ol class="article__list">
-                  <li>Sprawdza, czy przekazano dodatkowe argumenty do procesu zadania. Ustawia początkową wartość zmiennej <strong>langValue</strong> na <strong>"pl"</strong> i nadpisuje ją w przypadku podania innej.</li>
                   <li>Wykorzystuje pliki z rozszerzeniem <strong>.pug</strong>.</li>
                   <li>Raportuje o napotkanych błędach w strumieniu, nie przerywając wykonywania kolejnych pipe'ów (<a href="https://github.com/floatdrop/gulp-plumber#monkey-gulp-plumber" target="_blank" rel="help">gulp-plumber</a>).</li>
-                  <li>Przygotowuje obiekt danych, przekazując go wewnątrz strumienia do gulp-pug (<a href="https://github.com/colynb/gulp-data#gulp-data" target="_blank" rel="help">gulp-data</a>).</li>
-                  <li>Kompiluje pliki <strong>.pug</strong> , zwracając uzupełniony kod Html <br class="br__1"/>o przekazane informacje w obiekcie danych (<a href="https://pugjs.org/api/getting-started.html" target="_blank" rel="help">gulp-pug</a>).</li>
+                  <li>Przygotowuje odpowiedni obiekt danych i przekazuje go wewnątrz strumienia do gulp-pug (<a href="https://github.com/colynb/gulp-data#gulp-data" target="_blank" rel="help">gulp-data</a>).</li>
+                  <li>Kompiluje pliki <strong>.pug</strong> , zwracając uzupełniony kod HTML <br class="br__1"/>o przekazane informacje w obiekcie danych (<a href="https://pugjs.org/api/getting-started.html" target="_blank" rel="help">gulp-pug</a>).</li>
                   <li>Wstrzykuje tagi <strong>Link</strong> i <strong>Script</strong> ze ścieżkami źródłowymi do zainstalowanych bibliotek CSS lub JS. Pomiędzy poniższe komentarze w kodzie HTML (<a href="https://github.com/taptapship/wiredep#wiredep--" target="_blank" rel="help">wiredep</a>):
                     <pre class="code__block"><code class="code__line">&lt;!--bower:css--></code><br/><code class="code__line">// &lt;link href=""></code><br/><code class="code__line">&lt;!--endbower--></code><br/><br/><code class="code__line">&lt;!--bower:js--></code><br/><code class="code__line">// &lt;script src=""></code><br/><code class="code__line">&lt;!--endbower--></code></pre>
                   </li>

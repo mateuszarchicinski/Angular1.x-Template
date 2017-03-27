@@ -82,12 +82,13 @@
                         [
                             "Globalne ustawienia są dostępne w pliku",
                             ", który umożliwia zmianę:",
-                            "hosta (wykorzystywanego przy",
                             "nazwy aplikacji,",
                             "obsługiwanych języków,",
                             "wartości atrybutu href w tagu base,",
+                            "hosta (wykorzystywanego przy",
                             "nazwy pliku konfiguracyjnego i danych,",
                             "katalogów pracy i produkcji (wymagana również manualna zmiana w pliku",
+                            "ustawień modułu",
                             "dostępów FTP,",
                             "kluczy do zewnętrznych API,",
                             "identyfikatora śledzenia",
@@ -137,6 +138,10 @@
                         {
                             "name": "del",
                             "link": "https://www.npmjs.com/package/del"
+                        },
+                        {
+                            "name": "express",
+                            "link": "https://expressjs.com/"
                         },
                         {
                             "name": "gulp",
@@ -251,24 +256,12 @@
                             "link": "https://www.npmjs.com/package/imagemin-svgo"
                         },
                         {
-                            "name": "jshint-stylish",
-                            "link": "https://www.npmjs.com/package/jshint-stylish"
-                        },
-                        {
-                            "name": "run-sequence",
-                            "link": "https://www.npmjs.com/package/run-sequence"
-                        },
-                        {
-                            "name": "vinyl-ftp",
-                            "link": "https://www.npmjs.com/package/vinyl-ftp"
-                        },
-                        {
-                            "name": "wiredep",
-                            "link": "https://www.npmjs.com/package/wiredep"
-                        },
-                        {
                             "name": "jasmine",
                             "link": "https://jasmine.github.io/"
+                        },
+                        {
+                            "name": "jshint-stylish",
+                            "link": "https://www.npmjs.com/package/jshint-stylish"
                         },
                         {
                             "name": "karma",
@@ -285,6 +278,18 @@
                         {
                             "name": "karma-spec-reporter",
                             "link": "https://www.npmjs.com/package/karma-spec-reporter"
+                        },
+                        {
+                            "name": "run-sequence",
+                            "link": "https://www.npmjs.com/package/run-sequence"
+                        },
+                        {
+                            "name": "vinyl-ftp",
+                            "link": "https://www.npmjs.com/package/vinyl-ftp"
+                        },
+                        {
+                            "name": "wiredep",
+                            "link": "https://www.npmjs.com/package/wiredep"
                         }
                     ]
                 },
@@ -462,19 +467,14 @@
                             ],
                             "pug": [
                                 [
-                                    "Sprawdza, czy przekazano dodatkowe argumenty do procesu zadania. Ustawia początkową wartość zmiennej",
-                                    "na",
-                                    "i nadpisuje ją w przypadku podania innej."
-                                ],
-                                [
                                     "Wykorzystuje pliki z rozszerzeniem"
                                 ],
                                 [
-                                    "Przygotowuje obiekt danych, przekazując go wewnątrz strumienia do gulp-pug ("
+                                    "Przygotowuje odpowiedni obiekt danych i przekazuje go wewnątrz strumienia do gulp-pug ("
                                 ],
                                 [
                                     "Kompiluje pliki",
-                                    ", zwracając uzupełniony kod Html",
+                                    ", zwracając uzupełniony kod HTML",
                                     "o przekazane informacje w obiekcie danych ("
                                 ],
                                 [
@@ -785,12 +785,13 @@
                         [
                             "Global settings are available in file",
                             ", which allows you to change:",
-                            "host (used for",
                             "application name,",
                             "supported languages,",
                             "value of href attribute in tag base,",
+                            "host (used for",
                             "name of configuration file and data,",
                             "directory work and production (also requires manual update file",
+                            "settings of module",
                             "accesses FTP,",
                             "keys to external APIs,",
                             "tracking ID",
@@ -822,7 +823,7 @@
                     "headline": "NPM Modules",
                     "paragraph": [
                         [
-                            "List of modules required for proper work all functionality of environment ("
+                            "List of modules required for a proper work all functionality of environment ("
                         ],
                         [
                             "All of these modules are installed via command"
@@ -840,6 +841,10 @@
                         {
                             "name": "del",
                             "link": "https://www.npmjs.com/package/del"
+                        },
+                        {
+                            "name": "express",
+                            "link": "https://expressjs.com/"
                         },
                         {
                             "name": "gulp",
@@ -954,24 +959,12 @@
                             "link": "https://www.npmjs.com/package/imagemin-svgo"
                         },
                         {
-                            "name": "jshint-stylish",
-                            "link": "https://www.npmjs.com/package/jshint-stylish"
-                        },
-                        {
-                            "name": "run-sequence",
-                            "link": "https://www.npmjs.com/package/run-sequence"
-                        },
-                        {
-                            "name": "vinyl-ftp",
-                            "link": "https://www.npmjs.com/package/vinyl-ftp"
-                        },
-                        {
-                            "name": "wiredep",
-                            "link": "https://www.npmjs.com/package/wiredep"
-                        },
-                        {
                             "name": "jasmine",
                             "link": "https://jasmine.github.io/"
+                        },
+                        {
+                            "name": "jshint-stylish",
+                            "link": "https://www.npmjs.com/package/jshint-stylish"
                         },
                         {
                             "name": "karma",
@@ -988,6 +981,18 @@
                         {
                             "name": "karma-spec-reporter",
                             "link": "https://www.npmjs.com/package/karma-spec-reporter"
+                        },
+                        {
+                            "name": "run-sequence",
+                            "link": "https://www.npmjs.com/package/run-sequence"
+                        },
+                        {
+                            "name": "vinyl-ftp",
+                            "link": "https://www.npmjs.com/package/vinyl-ftp"
+                        },
+                        {
+                            "name": "wiredep",
+                            "link": "https://www.npmjs.com/package/wiredep"
                         }
                     ]
                 },
@@ -1110,7 +1115,7 @@
                                     "Saves resulting CSS code to file"
                                 ],
                                 [
-                                    "Injects new CSS code to overview page ("
+                                    "Injects new CSS code to preview page ("
                                 ]
                             ],
                             "sassLint": [
@@ -1165,15 +1170,10 @@
                             ],
                             "pug": [
                                 [
-                                    "Checks if passed additional arguments to process task. Sets the initial value of variable",
-                                    "to",
-                                    "and overwrites it in a case when otherwise noted."
-                                ],
-                                [
                                     "Uses files with extension"
                                 ],
                                 [
-                                    "Prepares a data object to pass it inside stream to gulp-pug ("
+                                    "Prepares a right data object and passing it inside a stream to gulp-pug ("
                                 ],
                                 [
                                     "Compiles files",
